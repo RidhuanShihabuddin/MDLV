@@ -1,0 +1,584 @@
+[
+    {
+        "id": "c8a080df4d9f4b9e",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "80bf2e9730c0445b",
+        "type": "group",
+        "z": "c8a080df4d9f4b9e",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "93e8d967837b5bf0",
+            "76f2529b3bf98eb7",
+            "f5976ac54667597e",
+            "25c024efc56c094e",
+            "e678ad57c6dd760b",
+            "320c55c94f180b57",
+            "c9019c9446b9b52c",
+            "e37df6d845031cd1"
+        ],
+        "x": 24,
+        "y": 579,
+        "w": 682,
+        "h": 222
+    },
+    {
+        "id": "66c504c770ca0283",
+        "type": "comment",
+        "z": "c8a080df4d9f4b9e",
+        "name": "E-STOP Button",
+        "info": "",
+        "x": 140,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "db3ad0b527432e3a",
+        "type": "inject",
+        "z": "c8a080df4d9f4b9e",
+        "name": "E-STOP_ON",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "str",
+        "x": 140,
+        "y": 180,
+        "wires": [
+            [
+                "e4c358f1d8a0be35"
+            ]
+        ]
+    },
+    {
+        "id": "4494010295a42565",
+        "type": "inject",
+        "z": "c8a080df4d9f4b9e",
+        "name": "E-STOP_OFF",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "e4c358f1d8a0be35"
+            ]
+        ]
+    },
+    {
+        "id": "e4c358f1d8a0be35",
+        "type": "function",
+        "z": "c8a080df4d9f4b9e",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"E-stop\";\n\nmsg.payload = {\n    onoff:di,\n    date:dts,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 220,
+        "wires": [
+            [
+                "3a5d446434ac9d84",
+                "66b561c32ae19fe0"
+            ]
+        ]
+    },
+    {
+        "id": "3a5d446434ac9d84",
+        "type": "debug",
+        "z": "c8a080df4d9f4b9e",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload.",
+        "statusType": "auto",
+        "x": 530,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "66b561c32ae19fe0",
+        "type": "mqtt out",
+        "z": "c8a080df4d9f4b9e",
+        "name": "",
+        "topic": "downtime",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5e17b817fab3699f",
+        "x": 560,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "93e8d967837b5bf0",
+        "type": "mysql",
+        "z": "c8a080df4d9f4b9e",
+        "g": "80bf2e9730c0445b",
+        "mydb": "f110849b1ee9066d",
+        "name": "",
+        "x": 550,
+        "y": 680,
+        "wires": [
+            [
+                "c9019c9446b9b52c"
+            ]
+        ]
+    },
+    {
+        "id": "76f2529b3bf98eb7",
+        "type": "function",
+        "z": "c8a080df4d9f4b9e",
+        "g": "80bf2e9730c0445b",
+        "name": "\"INSERT INTO",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar duration = msg.payload.duration//float\nvar downtime = msg.payload.downtime//string\nvar counter = msg.payload.counter\nvar ts= msg.payload.timestamp;//int\n\n\nmsg.topic= \"INSERT INTO signal_downtime(`Machine`,`Signal` ,`Status`,`Datetime`,`Downtime`,`Duration(s)`,`Counter`)\\\nVALUES('\"+machine+\"','\"+signal+\"',\"+di+\",'\"+datetime+\"','\"+downtime+\"',\"+duration+\",\"+counter+\")\"\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 680,
+        "wires": [
+            [
+                "93e8d967837b5bf0"
+            ]
+        ]
+    },
+    {
+        "id": "f5976ac54667597e",
+        "type": "mqtt in",
+        "z": "c8a080df4d9f4b9e",
+        "g": "80bf2e9730c0445b",
+        "name": "",
+        "topic": "downtime_sql",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "5e17b817fab3699f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 680,
+        "wires": [
+            [
+                "76f2529b3bf98eb7",
+                "e37df6d845031cd1"
+            ]
+        ]
+    },
+    {
+        "id": "25c024efc56c094e",
+        "type": "comment",
+        "z": "c8a080df4d9f4b9e",
+        "g": "80bf2e9730c0445b",
+        "name": "mySQL",
+        "info": "",
+        "x": 130,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "e678ad57c6dd760b",
+        "type": "function",
+        "z": "c8a080df4d9f4b9e",
+        "g": "80bf2e9730c0445b",
+        "name": "\"DELETE FROM",
+        "func": "msg.topic = \"DELETE FROM `signal_logging`\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 760,
+        "wires": [
+            [
+                "93e8d967837b5bf0"
+            ]
+        ]
+    },
+    {
+        "id": "320c55c94f180b57",
+        "type": "inject",
+        "z": "c8a080df4d9f4b9e",
+        "g": "80bf2e9730c0445b",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 120,
+        "y": 760,
+        "wires": [
+            [
+                "e678ad57c6dd760b"
+            ]
+        ]
+    },
+    {
+        "id": "c9019c9446b9b52c",
+        "type": "debug",
+        "z": "c8a080df4d9f4b9e",
+        "g": "80bf2e9730c0445b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 590,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "8affe9999d79f43e",
+        "type": "comment",
+        "z": "c8a080df4d9f4b9e",
+        "name": "APPLICATION",
+        "info": "",
+        "x": 120,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "9137c6842e4770ca",
+        "type": "switch",
+        "z": "c8a080df4d9f4b9e",
+        "name": "",
+        "property": "payload.signal",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "E-stop",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 250,
+        "y": 440,
+        "wires": [
+            [
+                "b12bdbaaef87cb1b",
+                "8247c51c0ae72b11"
+            ]
+        ]
+    },
+    {
+        "id": "b12bdbaaef87cb1b",
+        "type": "debug",
+        "z": "c8a080df4d9f4b9e",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 330,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "d324295ea19ec679",
+        "type": "mqtt in",
+        "z": "c8a080df4d9f4b9e",
+        "name": "",
+        "topic": "downtime",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "5e17b817fab3699f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 440,
+        "wires": [
+            [
+                "9137c6842e4770ca"
+            ]
+        ]
+    },
+    {
+        "id": "8247c51c0ae72b11",
+        "type": "switch",
+        "z": "c8a080df4d9f4b9e",
+        "name": "",
+        "property": "payload.onoff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 410,
+        "y": 440,
+        "wires": [
+            [
+                "07308b13ce60a341"
+            ],
+            [
+                "6dee031e9f2059cc"
+            ]
+        ]
+    },
+    {
+        "id": "07308b13ce60a341",
+        "type": "function",
+        "z": "c8a080df4d9f4b9e",
+        "name": "E-stop_on(ts)",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\nvar downtime= \"ongoing\";\nvar duration = 0;\nvar count= flow.get(\"es_on\");\n\nflow.set(\"es_on\",++count);\n\nflow.set(\"E-stop_on\",msg.payload.timestamp)\n\nmsg.payload={\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    duration:duration,\n    downtime:downtime,\n    counter:count\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 420,
+        "wires": [
+            [
+                "69baa50148cb7885",
+                "f294f10816d6cc10"
+            ]
+        ]
+    },
+    {
+        "id": "6dee031e9f2059cc",
+        "type": "function",
+        "z": "c8a080df4d9f4b9e",
+        "name": "E-stop_off(ts)",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\nvar es_off = msg.payload.timestamp;\nvar es_on = flow.get(\"E-stop_on\");\nvar downtime = \"stoped\";\nvar duration;\n\nduration= es_off - es_on;\nduration= duration/1000; // change milisecond to second\nduration= duration.toFixed(2); //change to 2 decimal (string)\nduration= parseFloat(duration);// change string to float\n\n\n\nmsg.payload={\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    duration:duration,\n    downtime:downtime,\n    counter:flow.get(\"es_on\")\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 480,
+        "wires": [
+            [
+                "1522fae8e83f5378",
+                "f294f10816d6cc10"
+            ]
+        ]
+    },
+    {
+        "id": "1522fae8e83f5378",
+        "type": "debug",
+        "z": "c8a080df4d9f4b9e",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 790,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "b5e3bfd728758837",
+        "type": "comment",
+        "z": "c8a080df4d9f4b9e",
+        "name": "Downtime",
+        "info": "",
+        "x": 100,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "f294f10816d6cc10",
+        "type": "mqtt out",
+        "z": "c8a080df4d9f4b9e",
+        "name": "",
+        "topic": "downtime_sql",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5e17b817fab3699f",
+        "x": 800,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "69baa50148cb7885",
+        "type": "debug",
+        "z": "c8a080df4d9f4b9e",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e37df6d845031cd1",
+        "type": "debug",
+        "z": "c8a080df4d9f4b9e",
+        "g": "80bf2e9730c0445b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 330,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "0b61034440d4b8ed",
+        "type": "inject",
+        "z": "c8a080df4d9f4b9e",
+        "name": "reset counter",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "23b1d9c65096ecd6"
+            ]
+        ]
+    },
+    {
+        "id": "23b1d9c65096ecd6",
+        "type": "function",
+        "z": "c8a080df4d9f4b9e",
+        "name": "flow.set(\"es_on\", 0);",
+        "func": "flow.set(\"es_on\",msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5e17b817fab3699f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f110849b1ee9066d",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "localhost",
+        "port": "3306",
+        "db": "datalogging",
+        "tz": "",
+        "charset": "UTF8"
+    }
+]
