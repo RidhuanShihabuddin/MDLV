@@ -1,0 +1,758 @@
+[
+    {
+        "id": "4e85de56b9f08552",
+        "type": "tab",
+        "label": "Day 3 (Downtime Influx)",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "53f835f733754da4",
+        "type": "group",
+        "z": "4e85de56b9f08552",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "40801f7daf937b7c",
+            "2fe3c250203de19e",
+            "7e4f4ecf38bfb456",
+            "a8dc51af8e46cf8a",
+            "b34fa0707248cc8f",
+            "dbe50744c19dae4d",
+            "2e8d4f45ac24adfb",
+            "16d471c8d6c5c6b2",
+            "c071123063f79809"
+        ],
+        "x": 54,
+        "y": 259,
+        "w": 992,
+        "h": 242
+    },
+    {
+        "id": "83d3ca85e591da07",
+        "type": "group",
+        "z": "4e85de56b9f08552",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "5f36dd26b47f71a1",
+            "a1910a7897b30379",
+            "ff6ec775311ea91b",
+            "662dd795ffe71d5f",
+            "223c82a63b37f0d0",
+            "bd34a39799279b28"
+        ],
+        "x": 64,
+        "y": 19,
+        "w": 642,
+        "h": 202
+    },
+    {
+        "id": "5f36dd26b47f71a1",
+        "type": "comment",
+        "z": "4e85de56b9f08552",
+        "g": "83d3ca85e591da07",
+        "name": "E-STOP Button",
+        "info": "",
+        "x": 180,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "a1910a7897b30379",
+        "type": "inject",
+        "z": "4e85de56b9f08552",
+        "g": "83d3ca85e591da07",
+        "name": "E-STOP_ON",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 180,
+        "y": 100,
+        "wires": [
+            [
+                "662dd795ffe71d5f"
+            ]
+        ]
+    },
+    {
+        "id": "ff6ec775311ea91b",
+        "type": "inject",
+        "z": "4e85de56b9f08552",
+        "g": "83d3ca85e591da07",
+        "name": "E-STOP_OFF",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 180,
+        "y": 180,
+        "wires": [
+            [
+                "662dd795ffe71d5f"
+            ]
+        ]
+    },
+    {
+        "id": "662dd795ffe71d5f",
+        "type": "function",
+        "z": "4e85de56b9f08552",
+        "g": "83d3ca85e591da07",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"E-stop\";\n\nmsg.payload = {\n    onoff:di,\n    date:dts,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 140,
+        "wires": [
+            [
+                "223c82a63b37f0d0",
+                "bd34a39799279b28"
+            ]
+        ]
+    },
+    {
+        "id": "223c82a63b37f0d0",
+        "type": "debug",
+        "z": "4e85de56b9f08552",
+        "g": "83d3ca85e591da07",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload.",
+        "statusType": "auto",
+        "x": 570,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "bd34a39799279b28",
+        "type": "mqtt out",
+        "z": "4e85de56b9f08552",
+        "g": "83d3ca85e591da07",
+        "name": "",
+        "topic": "downtime_",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5e17b817fab3699f",
+        "x": 610,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "40801f7daf937b7c",
+        "type": "switch",
+        "z": "4e85de56b9f08552",
+        "g": "53f835f733754da4",
+        "name": "",
+        "property": "payload.signal",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "E-stop",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 290,
+        "y": 360,
+        "wires": [
+            [
+                "7e4f4ecf38bfb456"
+            ]
+        ]
+    },
+    {
+        "id": "2fe3c250203de19e",
+        "type": "mqtt in",
+        "z": "4e85de56b9f08552",
+        "g": "53f835f733754da4",
+        "name": "",
+        "topic": "downtime_",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "5e17b817fab3699f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 360,
+        "wires": [
+            [
+                "40801f7daf937b7c"
+            ]
+        ]
+    },
+    {
+        "id": "7e4f4ecf38bfb456",
+        "type": "switch",
+        "z": "4e85de56b9f08552",
+        "g": "53f835f733754da4",
+        "name": "",
+        "property": "payload.onoff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 360,
+        "wires": [
+            [
+                "a8dc51af8e46cf8a"
+            ],
+            [
+                "b34fa0707248cc8f"
+            ]
+        ]
+    },
+    {
+        "id": "a8dc51af8e46cf8a",
+        "type": "function",
+        "z": "4e85de56b9f08552",
+        "g": "53f835f733754da4",
+        "name": "E-stop_on(ts)",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\n\nvar downtime= \"ongoing\";\nvar duration = 0;\nvar count= flow.get(\"es_on\");\n\nflow.set(\"es_on\",++count); // add counter value\n\nflow.set(\"E-stop_on\",msg.payload.timestamp); //save Em.Stop_On time\n\nmsg.payload={\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    duration:duration,\n    downtime:downtime,\n    counter:count\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 300,
+        "wires": [
+            [
+                "c071123063f79809",
+                "16d471c8d6c5c6b2"
+            ]
+        ]
+    },
+    {
+        "id": "b34fa0707248cc8f",
+        "type": "function",
+        "z": "4e85de56b9f08552",
+        "g": "53f835f733754da4",
+        "name": "E-stop_off(ts)",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\nvar es_off = msg.payload.timestamp;\nvar es_on = flow.get(\"E-stop_on\");\nvar downtime = \"stoped\";\nvar duration;\n\nduration= es_off - es_on;\nduration= duration/1000; // change milisecond to second\nduration= duration.toFixed(2); //change to 2 decimal (string)\nduration= parseFloat(duration);// change string to float\n\n\n\nmsg.payload={\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    duration:duration,\n    downtime:downtime,\n    counter:flow.get(\"es_on\")\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 420,
+        "wires": [
+            [
+                "dbe50744c19dae4d",
+                "16d471c8d6c5c6b2"
+            ]
+        ]
+    },
+    {
+        "id": "dbe50744c19dae4d",
+        "type": "debug",
+        "z": "4e85de56b9f08552",
+        "g": "53f835f733754da4",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 650,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "2e8d4f45ac24adfb",
+        "type": "comment",
+        "z": "4e85de56b9f08552",
+        "g": "53f835f733754da4",
+        "name": "Downtime Counter & Duration",
+        "info": "",
+        "x": 200,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "16d471c8d6c5c6b2",
+        "type": "mqtt out",
+        "z": "4e85de56b9f08552",
+        "g": "53f835f733754da4",
+        "name": "",
+        "topic": "downtime_influx",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5e17b817fab3699f",
+        "x": 940,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "c071123063f79809",
+        "type": "debug",
+        "z": "4e85de56b9f08552",
+        "g": "53f835f733754da4",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 670,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "3d364765232d6926",
+        "type": "inject",
+        "z": "4e85de56b9f08552",
+        "name": "Reset Counter",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 150,
+        "y": 1120,
+        "wires": [
+            [
+                "d5925ed6bd9a6456"
+            ]
+        ]
+    },
+    {
+        "id": "d5925ed6bd9a6456",
+        "type": "function",
+        "z": "4e85de56b9f08552",
+        "name": "",
+        "func": "flow.set(\"es_on\",msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "47e3e5e8cd7d5d69",
+        "type": "comment",
+        "z": "4e85de56b9f08552",
+        "name": "Write Influxdb",
+        "info": "",
+        "x": 150,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "e97576a1e06db840",
+        "type": "function",
+        "z": "4e85de56b9f08552",
+        "name": "",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\nvar downtime = msg.payload.downtime;\nvar duration = msg.payload.duration;\nvar counter = msg.payload.counter;\n\n\nmsg.payload=[{measurement:\"signal_downtime\",\n                fields:{\n                    \n                    date:datetime,\n                    onoff:di,\n                    duration:duration,\n                    downtime:downtime,\n                    counter:counter\n                },\n                tags:{\n                    MachineID:machine,\n                    signal:signal\n                },\n                timestamp:ts\n    \n}\n    \n    ]\nreturn msg;\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 640,
+        "wires": [
+            [
+                "eca0fca98392fac0",
+                "c41c963758bebd0a"
+            ]
+        ]
+    },
+    {
+        "id": "eca0fca98392fac0",
+        "type": "influxdb batch",
+        "z": "4e85de56b9f08552",
+        "influxdb": "6d7bf7ac4eb2ad1c",
+        "precision": "ms",
+        "retentionPolicy": "",
+        "name": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 700,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "c41c963758bebd0a",
+        "type": "debug",
+        "z": "4e85de56b9f08552",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "51d34873078cc749",
+        "type": "mqtt in",
+        "z": "4e85de56b9f08552",
+        "name": "",
+        "topic": "downtime_influx",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "5e17b817fab3699f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 640,
+        "wires": [
+            [
+                "e97576a1e06db840"
+            ]
+        ]
+    },
+    {
+        "id": "bc4d29cb5a040e87",
+        "type": "comment",
+        "z": "4e85de56b9f08552",
+        "name": "Read InfluxDB",
+        "info": "",
+        "x": 150,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "a555a802ce6c4c47",
+        "type": "influxdb in",
+        "z": "4e85de56b9f08552",
+        "influxdb": "6d7bf7ac4eb2ad1c",
+        "name": "",
+        "query": "SELECT*FROM signal_downtime",
+        "rawOutput": false,
+        "precision": "ms",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 360,
+        "y": 820,
+        "wires": [
+            [
+                "12b219c2cac0958b"
+            ]
+        ]
+    },
+    {
+        "id": "422df107bb09b58a",
+        "type": "inject",
+        "z": "4e85de56b9f08552",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 820,
+        "wires": [
+            [
+                "a555a802ce6c4c47"
+            ]
+        ]
+    },
+    {
+        "id": "12b219c2cac0958b",
+        "type": "debug",
+        "z": "4e85de56b9f08552",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 630,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "703b3835a3d63b6c",
+        "type": "inject",
+        "z": "4e85de56b9f08552",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 860,
+        "wires": [
+            [
+                "71cadc105cc81453"
+            ]
+        ]
+    },
+    {
+        "id": "71cadc105cc81453",
+        "type": "influxdb in",
+        "z": "4e85de56b9f08552",
+        "influxdb": "6d7bf7ac4eb2ad1c",
+        "name": "onoff = 1",
+        "query": "SELECT*FROM signal_downtime WHERE onoff = 1",
+        "rawOutput": false,
+        "precision": "ms",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 300,
+        "y": 860,
+        "wires": [
+            [
+                "12b219c2cac0958b"
+            ]
+        ]
+    },
+    {
+        "id": "1d6e9ca704fcb4bd",
+        "type": "inject",
+        "z": "4e85de56b9f08552",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 900,
+        "wires": [
+            [
+                "667e65149c964dbc"
+            ]
+        ]
+    },
+    {
+        "id": "667e65149c964dbc",
+        "type": "influxdb in",
+        "z": "4e85de56b9f08552",
+        "influxdb": "6d7bf7ac4eb2ad1c",
+        "name": "onoff = 0",
+        "query": "SELECT*FROM signal_downtime WHERE onoff = 0",
+        "rawOutput": false,
+        "precision": "ms",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 300,
+        "y": 900,
+        "wires": [
+            [
+                "12b219c2cac0958b"
+            ]
+        ]
+    },
+    {
+        "id": "7793368b1d3ba470",
+        "type": "comment",
+        "z": "4e85de56b9f08552",
+        "name": "DELETE MEASUREMENT",
+        "info": "",
+        "x": 170,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "70393bf7ce9df2ce",
+        "type": "influxdb in",
+        "z": "4e85de56b9f08552",
+        "influxdb": "6d7bf7ac4eb2ad1c",
+        "name": "",
+        "query": "DELETE FROM signal_downtime",
+        "rawOutput": false,
+        "precision": "ms",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 360,
+        "y": 1020,
+        "wires": [
+            [
+                "be6d650c481957b9"
+            ]
+        ]
+    },
+    {
+        "id": "26a125fb0a798eb5",
+        "type": "inject",
+        "z": "4e85de56b9f08552",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 1020,
+        "wires": [
+            [
+                "70393bf7ce9df2ce"
+            ]
+        ]
+    },
+    {
+        "id": "be6d650c481957b9",
+        "type": "debug",
+        "z": "4e85de56b9f08552",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 630,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "467029ba2444feb8",
+        "type": "comment",
+        "z": "4e85de56b9f08552",
+        "name": "Reset Counter",
+        "info": "",
+        "x": 140,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "5e17b817fab3699f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6d7bf7ac4eb2ad1c",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "mldvrid",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    }
+]
