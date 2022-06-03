@@ -1,0 +1,460 @@
+[
+    {
+        "id": "fbaa8ad12bd8c73d",
+        "type": "group",
+        "z": "4e85de56b9f08552",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "47e3e5e8cd7d5d69",
+            "e97576a1e06db840",
+            "eca0fca98392fac0",
+            "c41c963758bebd0a",
+            "51d34873078cc749",
+            "bc4d29cb5a040e87",
+            "a555a802ce6c4c47",
+            "422df107bb09b58a",
+            "12b219c2cac0958b",
+            "7793368b1d3ba470",
+            "70393bf7ce9df2ce",
+            "26a125fb0a798eb5",
+            "be6d650c481957b9",
+            "7f3f28d09e784762",
+            "b0c864ed5ab28d92",
+            "22d5702782d49917",
+            "73c564ee5da28159",
+            "c2f446bf7466dccf",
+            "59310f262c8b44ca",
+            "a24ae7dde806be6c"
+        ],
+        "x": 94,
+        "y": 859,
+        "w": 892,
+        "h": 562
+    },
+    {
+        "id": "47e3e5e8cd7d5d69",
+        "type": "comment",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "name": "Write Influxdb",
+        "info": "",
+        "x": 190,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "e97576a1e06db840",
+        "type": "function",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "name": "",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\nvar downtime = msg.payload.downtime;\nvar duration = msg.payload.duration;\nvar counter = msg.payload.counter;\n\n\nmsg.payload=[{measurement:\"rid_signal_downtime\",\n                fields:{\n                    \n                    _1_date:datetime,\n                    _4_onoff:di,\n                    _5_duration:duration,\n                    _6_downtime:downtime,\n                    _7_counter:counter\n                },\n                tags:{\n                    _2_MachineID:machine,\n                    _3_signal:signal\n                },\n                timestamp:ts\n    \n}\n    \n    ]\nreturn msg;\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 1000,
+        "wires": [
+            [
+                "eca0fca98392fac0",
+                "c41c963758bebd0a",
+                "7f3f28d09e784762"
+            ]
+        ]
+    },
+    {
+        "id": "eca0fca98392fac0",
+        "type": "influxdb batch",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "influxdb": "6d7bf7ac4eb2ad1c",
+        "precision": "ms",
+        "retentionPolicy": "",
+        "name": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 760,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "c41c963758bebd0a",
+        "type": "debug",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "51d34873078cc749",
+        "type": "mqtt in",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "name": "",
+        "topic": "downtime_influx",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "5e17b817fab3699f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 1000,
+        "wires": [
+            [
+                "e97576a1e06db840"
+            ]
+        ]
+    },
+    {
+        "id": "bc4d29cb5a040e87",
+        "type": "comment",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "name": "Read InfluxDB",
+        "info": "",
+        "x": 190,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "a555a802ce6c4c47",
+        "type": "influxdb in",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "influxdb": "6d7bf7ac4eb2ad1c",
+        "name": "",
+        "query": "SELECT*FROM rid_signal_downtime",
+        "rawOutput": false,
+        "precision": "ms",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 420,
+        "y": 1220,
+        "wires": [
+            [
+                "12b219c2cac0958b"
+            ]
+        ]
+    },
+    {
+        "id": "422df107bb09b58a",
+        "type": "inject",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 1220,
+        "wires": [
+            [
+                "a555a802ce6c4c47"
+            ]
+        ]
+    },
+    {
+        "id": "12b219c2cac0958b",
+        "type": "debug",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 690,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "7793368b1d3ba470",
+        "type": "comment",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "name": "DELETE MEASUREMENT",
+        "info": "",
+        "x": 230,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "70393bf7ce9df2ce",
+        "type": "influxdb in",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "influxdb": "6d7bf7ac4eb2ad1c",
+        "name": "",
+        "query": "DELETE FROM rid_signal_downtime",
+        "rawOutput": false,
+        "precision": "ms",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 420,
+        "y": 1340,
+        "wires": [
+            [
+                "be6d650c481957b9"
+            ]
+        ]
+    },
+    {
+        "id": "26a125fb0a798eb5",
+        "type": "inject",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 1340,
+        "wires": [
+            [
+                "70393bf7ce9df2ce"
+            ]
+        ]
+    },
+    {
+        "id": "be6d650c481957b9",
+        "type": "debug",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 690,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "7f3f28d09e784762",
+        "type": "influxdb batch",
+        "z": "4e85de56b9f08552",
+        "d": true,
+        "g": "fbaa8ad12bd8c73d",
+        "influxdb": "3b36bfa811685582",
+        "precision": "ms",
+        "retentionPolicy": "",
+        "name": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 800,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "b0c864ed5ab28d92",
+        "type": "debug",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 730,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "22d5702782d49917",
+        "type": "inject",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 1380,
+        "wires": [
+            [
+                "73c564ee5da28159"
+            ]
+        ]
+    },
+    {
+        "id": "73c564ee5da28159",
+        "type": "influxdb in",
+        "z": "4e85de56b9f08552",
+        "d": true,
+        "g": "fbaa8ad12bd8c73d",
+        "influxdb": "3b36bfa811685582",
+        "name": "",
+        "query": "DELETE FROM rid_signal_downtime",
+        "rawOutput": false,
+        "precision": "ms",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 460,
+        "y": 1380,
+        "wires": [
+            [
+                "c2f446bf7466dccf"
+            ]
+        ]
+    },
+    {
+        "id": "c2f446bf7466dccf",
+        "type": "debug",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 730,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "59310f262c8b44ca",
+        "type": "influxdb in",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "influxdb": "3b36bfa811685582",
+        "name": "",
+        "query": "SELECT*FROM rid_signal_downtime",
+        "rawOutput": false,
+        "precision": "ms",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 420,
+        "y": 1180,
+        "wires": [
+            [
+                "b0c864ed5ab28d92"
+            ]
+        ]
+    },
+    {
+        "id": "a24ae7dde806be6c",
+        "type": "inject",
+        "z": "4e85de56b9f08552",
+        "g": "fbaa8ad12bd8c73d",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 1180,
+        "wires": [
+            [
+                "59310f262c8b44ca"
+            ]
+        ]
+    },
+    {
+        "id": "6d7bf7ac4eb2ad1c",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "mldvrid",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "5e17b817fab3699f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "3b36bfa811685582",
+        "type": "influxdb",
+        "hostname": "192.168.4.147",
+        "port": "8086",
+        "protocol": "http",
+        "database": "MUP_DAA02",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    }
+]
