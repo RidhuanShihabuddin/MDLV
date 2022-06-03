@@ -1,0 +1,2069 @@
+[
+    {
+        "id": "041ba8506125e783",
+        "type": "tab",
+        "label": "Day 1&2 (MDLV Simulator)",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0fdbe2b08c015a8a",
+        "type": "group",
+        "z": "041ba8506125e783",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "bd2852c7e63ff9d4",
+            "98d0ee459d1a20fe",
+            "7517cd6401546b41",
+            "122e3ef23e3d558b"
+        ],
+        "x": 834,
+        "y": 499,
+        "w": 452,
+        "h": 142
+    },
+    {
+        "id": "44d0656c6cc79e22",
+        "type": "group",
+        "z": "041ba8506125e783",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "5f4d687fef41b16d",
+            "c455bf9d1b16fe8b",
+            "990e2e0ffdf54d4f",
+            "6622c97a1f4aeecf",
+            "94df024939e297ad",
+            "c5c365f873b06a12"
+        ],
+        "x": 64,
+        "y": 119,
+        "w": 622,
+        "h": 242
+    },
+    {
+        "id": "1ef8515bfe565ffd",
+        "type": "group",
+        "z": "041ba8506125e783",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "c53f0170a7ce1a08",
+            "6da45f58ebfb9f8b",
+            "c5ede25631d70298",
+            "89b34d862017baad",
+            "e14f49b77101d4e6",
+            "160592f7efe0e8a8",
+            "73814bd6574d21e1",
+            "6f864beaf756508f",
+            "3552b545577c0dfd",
+            "919fb10b3e635916",
+            "bdc97fc1d04a0dbf",
+            "e0627501c665bba9",
+            "85c5074801f0d3c4",
+            "2c7735bdab58a927"
+        ],
+        "x": 54,
+        "y": 379,
+        "w": 752,
+        "h": 382
+    },
+    {
+        "id": "b0ac15b521ccad72",
+        "type": "group",
+        "z": "041ba8506125e783",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "3648a37fd60b3213",
+            "d425b3bb733f2c36",
+            "f5694698e68095bf",
+            "a96bbf43e7643054",
+            "578165555e9adb3c"
+        ],
+        "x": 54,
+        "y": 1139,
+        "w": 892,
+        "h": 182
+    },
+    {
+        "id": "d9527beb0a024831",
+        "type": "group",
+        "z": "041ba8506125e783",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "ef5edceaf2fef7d8",
+            "e19165eec0f3f98b",
+            "f0ad086755b583c3",
+            "d810a80a2cf09ecd",
+            "36eee47f6751e60c",
+            "9220308bc5c7c9ce",
+            "41712e77b72af404",
+            "f7b9ceee010761c5",
+            "6a4c8551e37c97dc",
+            "32c2c0b3d3d4fd03",
+            "b53767f80979c8c2"
+        ],
+        "x": 54,
+        "y": 779,
+        "w": 872,
+        "h": 322
+    },
+    {
+        "id": "9eec77e844600932",
+        "type": "group",
+        "z": "041ba8506125e783",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "c2817406c225c26b",
+            "5dfe5c55e7b8775b",
+            "b5ebd04bce95c8a1",
+            "57e59cd367561842",
+            "e82045f6043ed873",
+            "6469166792ca27e3",
+            "f5d7a8ac604e07c9"
+        ],
+        "x": 54,
+        "y": 1339,
+        "w": 932,
+        "h": 182
+    },
+    {
+        "id": "9b81ae3f342a57f1",
+        "type": "group",
+        "z": "041ba8506125e783",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "26e15a282995265e",
+            "e170eef32eecba61",
+            "0c429a8d2837935c",
+            "b18442f1969e6f36",
+            "935bb00814192b93",
+            "c6eb65dd9e292629",
+            "c22422255dfefd76",
+            "7d9dc720761f2686",
+            "85248e8cd50e3310",
+            "96ef801587868dd3"
+        ],
+        "x": 54,
+        "y": 1899,
+        "w": 632,
+        "h": 282
+    },
+    {
+        "id": "97bdc6cb6dcc8fc6",
+        "type": "group",
+        "z": "041ba8506125e783",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "257a9498a1b2df89",
+            "1baca755bf5dbd86",
+            "490a92cf4eaf3580",
+            "86134594c52117ea",
+            "a084184b7c4a30b4",
+            "f1a00bb43249f1e3",
+            "19878a11ffcb9836",
+            "db0c54727007ec49",
+            "3bac1599c6efafec"
+        ],
+        "x": 44,
+        "y": 1539,
+        "w": 802,
+        "h": 282
+    },
+    {
+        "id": "4f63cb48f3bf54e6",
+        "type": "group",
+        "z": "041ba8506125e783",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "2b56e732039b6e25",
+            "bc76a1874c139a03",
+            "5794eb57b24bab25",
+            "cf1032f39c9fe7cf",
+            "ff52d57910b28267",
+            "88177942fb490125",
+            "09f44e9661723c19",
+            "e3f819587c9c8f4b",
+            "b4b898cdfacc76c5",
+            "4a5776fdc2c75802"
+        ],
+        "x": 54,
+        "y": 2219,
+        "w": 632,
+        "h": 282
+    },
+    {
+        "id": "5f4d687fef41b16d",
+        "type": "comment",
+        "z": "041ba8506125e783",
+        "g": "44d0656c6cc79e22",
+        "name": "E-STOP Button",
+        "info": "",
+        "x": 180,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "c455bf9d1b16fe8b",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "44d0656c6cc79e22",
+        "name": "E-STOP_ON",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "str",
+        "x": 180,
+        "y": 240,
+        "wires": [
+            [
+                "6622c97a1f4aeecf"
+            ]
+        ]
+    },
+    {
+        "id": "990e2e0ffdf54d4f",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "44d0656c6cc79e22",
+        "name": "E-STOP_OFF",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 180,
+        "y": 320,
+        "wires": [
+            [
+                "6622c97a1f4aeecf"
+            ]
+        ]
+    },
+    {
+        "id": "6622c97a1f4aeecf",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "44d0656c6cc79e22",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"E-stop\";\n\nmsg.payload = {\n    onoff:di,\n    date:dts,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 240,
+        "wires": [
+            [
+                "94df024939e297ad",
+                "c5c365f873b06a12"
+            ]
+        ]
+    },
+    {
+        "id": "bd2852c7e63ff9d4",
+        "type": "comment",
+        "z": "041ba8506125e783",
+        "g": "0fdbe2b08c015a8a",
+        "name": "Saving as csv file",
+        "info": "",
+        "x": 1080,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "98d0ee459d1a20fe",
+        "type": "csv",
+        "z": "041ba8506125e783",
+        "g": "0fdbe2b08c015a8a",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "once",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "onoff,timestamp,date,MachineID,signal",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 1050,
+        "y": 600,
+        "wires": [
+            [
+                "7517cd6401546b41"
+            ]
+        ]
+    },
+    {
+        "id": "7517cd6401546b41",
+        "type": "file",
+        "z": "041ba8506125e783",
+        "g": "0fdbe2b08c015a8a",
+        "name": "to csv file",
+        "filename": "C:\\Users\\suhaimi\\Documents\\RID\\MDLV\\mdlvTest1.csv",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1200,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "94df024939e297ad",
+        "type": "debug",
+        "z": "041ba8506125e783",
+        "g": "44d0656c6cc79e22",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload.",
+        "statusType": "auto",
+        "x": 560,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "c53f0170a7ce1a08",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "1ef8515bfe565ffd",
+        "name": "S1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 150,
+        "y": 480,
+        "wires": [
+            [
+                "6da45f58ebfb9f8b"
+            ]
+        ]
+    },
+    {
+        "id": "6da45f58ebfb9f8b",
+        "type": "trigger",
+        "z": "041ba8506125e783",
+        "g": "1ef8515bfe565ffd",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "num",
+        "duration": "2",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 340,
+        "y": 480,
+        "wires": [
+            [
+                "c5ede25631d70298"
+            ]
+        ]
+    },
+    {
+        "id": "c5ede25631d70298",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "1ef8515bfe565ffd",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"Sensor 1\";\n\nmsg.payload = {\n    onoff:di,\n    timestamp:ts,\n    date:dts,\n    MachineID:machine,\n    signal:signal\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 480,
+        "wires": [
+            [
+                "2c7735bdab58a927"
+            ]
+        ]
+    },
+    {
+        "id": "89b34d862017baad",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "1ef8515bfe565ffd",
+        "name": "S2",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 150,
+        "y": 560,
+        "wires": [
+            [
+                "e14f49b77101d4e6"
+            ]
+        ]
+    },
+    {
+        "id": "e14f49b77101d4e6",
+        "type": "trigger",
+        "z": "041ba8506125e783",
+        "g": "1ef8515bfe565ffd",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "num",
+        "duration": "2",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 340,
+        "y": 560,
+        "wires": [
+            [
+                "160592f7efe0e8a8"
+            ]
+        ]
+    },
+    {
+        "id": "160592f7efe0e8a8",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "1ef8515bfe565ffd",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"Sensor 2\";\n\nmsg.payload = {\n    onoff:di,\n    timestamp:ts,\n    date:dts,\n    MachineID:machine,\n    signal:signal\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 560,
+        "wires": [
+            [
+                "2c7735bdab58a927"
+            ]
+        ]
+    },
+    {
+        "id": "73814bd6574d21e1",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "1ef8515bfe565ffd",
+        "name": "IS",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 150,
+        "y": 640,
+        "wires": [
+            [
+                "6f864beaf756508f"
+            ]
+        ]
+    },
+    {
+        "id": "6f864beaf756508f",
+        "type": "trigger",
+        "z": "041ba8506125e783",
+        "g": "1ef8515bfe565ffd",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "num",
+        "duration": "2",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 340,
+        "y": 640,
+        "wires": [
+            [
+                "3552b545577c0dfd"
+            ]
+        ]
+    },
+    {
+        "id": "3552b545577c0dfd",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "1ef8515bfe565ffd",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"Inductive Sensor\";\n\nmsg.payload = {\n    onoff:di,\n    timestamp:ts,\n    date:dts,\n    MachineID:machine,\n    signal:signal\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 640,
+        "wires": [
+            [
+                "2c7735bdab58a927"
+            ]
+        ]
+    },
+    {
+        "id": "919fb10b3e635916",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "1ef8515bfe565ffd",
+        "name": "S3",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 150,
+        "y": 720,
+        "wires": [
+            [
+                "bdc97fc1d04a0dbf"
+            ]
+        ]
+    },
+    {
+        "id": "bdc97fc1d04a0dbf",
+        "type": "trigger",
+        "z": "041ba8506125e783",
+        "g": "1ef8515bfe565ffd",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "num",
+        "duration": "2",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 340,
+        "y": 720,
+        "wires": [
+            [
+                "e0627501c665bba9"
+            ]
+        ]
+    },
+    {
+        "id": "e0627501c665bba9",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "1ef8515bfe565ffd",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"Sensor 3\";\n\nmsg.payload = {\n    onoff:di,\n    timestamp:ts,\n    date:dts,\n    MachineID:machine,\n    signal:signal\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 720,
+        "wires": [
+            [
+                "2c7735bdab58a927"
+            ]
+        ]
+    },
+    {
+        "id": "85c5074801f0d3c4",
+        "type": "comment",
+        "z": "041ba8506125e783",
+        "g": "1ef8515bfe565ffd",
+        "name": "Sensor",
+        "info": "",
+        "x": 150,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "122e3ef23e3d558b",
+        "type": "mqtt in",
+        "z": "041ba8506125e783",
+        "g": "0fdbe2b08c015a8a",
+        "name": "",
+        "topic": "mdlv",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "5e17b817fab3699f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 910,
+        "y": 600,
+        "wires": [
+            [
+                "98d0ee459d1a20fe"
+            ]
+        ]
+    },
+    {
+        "id": "c5c365f873b06a12",
+        "type": "mqtt out",
+        "z": "041ba8506125e783",
+        "g": "44d0656c6cc79e22",
+        "name": "",
+        "topic": "mdlv",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5e17b817fab3699f",
+        "x": 610,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "2c7735bdab58a927",
+        "type": "mqtt out",
+        "z": "041ba8506125e783",
+        "g": "1ef8515bfe565ffd",
+        "name": "",
+        "topic": "mdlv",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5e17b817fab3699f",
+        "x": 730,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "3648a37fd60b3213",
+        "type": "comment",
+        "z": "041ba8506125e783",
+        "g": "b0ac15b521ccad72",
+        "name": "read csv",
+        "info": "",
+        "x": 140,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "d425b3bb733f2c36",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "b0ac15b521ccad72",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 1220,
+        "wires": [
+            [
+                "578165555e9adb3c"
+            ]
+        ]
+    },
+    {
+        "id": "f5694698e68095bf",
+        "type": "csv",
+        "z": "041ba8506125e783",
+        "g": "b0ac15b521ccad72",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 690,
+        "y": 1280,
+        "wires": [
+            [
+                "a96bbf43e7643054"
+            ]
+        ]
+    },
+    {
+        "id": "a96bbf43e7643054",
+        "type": "debug",
+        "z": "041ba8506125e783",
+        "g": "b0ac15b521ccad72",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 830,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "578165555e9adb3c",
+        "type": "file in",
+        "z": "041ba8506125e783",
+        "g": "b0ac15b521ccad72",
+        "name": "",
+        "filename": "C:\\Users\\suhaimi\\Documents\\RID\\MDLV\\mdlvTest1.csv",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 460,
+        "y": 1220,
+        "wires": [
+            [
+                "f5694698e68095bf"
+            ]
+        ]
+    },
+    {
+        "id": "ef5edceaf2fef7d8",
+        "type": "comment",
+        "z": "041ba8506125e783",
+        "g": "d9527beb0a024831",
+        "name": "Write to SQLite",
+        "info": "",
+        "x": 160,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "e19165eec0f3f98b",
+        "type": "mqtt in",
+        "z": "041ba8506125e783",
+        "g": "d9527beb0a024831",
+        "name": "",
+        "topic": "mdlv",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "5e17b817fab3699f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 880,
+        "wires": [
+            [
+                "f0ad086755b583c3",
+                "d810a80a2cf09ecd"
+            ]
+        ]
+    },
+    {
+        "id": "f0ad086755b583c3",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "d9527beb0a024831",
+        "name": "INSERT INTO SQLite",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar ts= msg.payload.timestamp;//int\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\n\nmsg.topic= \"INSERT INTO signal_logging(di,machine,ts,signal,datetime)\\\nVALUES(\"+di+\",'\"+machine+\"',\"+ts+\",'\"+signal+\"','\"+datetime+\"')\"\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 880,
+        "wires": [
+            [
+                "36eee47f6751e60c"
+            ]
+        ]
+    },
+    {
+        "id": "d810a80a2cf09ecd",
+        "type": "debug",
+        "z": "041ba8506125e783",
+        "g": "d9527beb0a024831",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 350,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "36eee47f6751e60c",
+        "type": "sqlite",
+        "z": "041ba8506125e783",
+        "g": "d9527beb0a024831",
+        "mydb": "e7b98f1417d024e3",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 700,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9220308bc5c7c9ce",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "d9527beb0a024831",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 160,
+        "y": 940,
+        "wires": [
+            [
+                "41712e77b72af404"
+            ]
+        ]
+    },
+    {
+        "id": "41712e77b72af404",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "d9527beb0a024831",
+        "name": "CREATE TABLE",
+        "func": "msg.topic= \"CREATE TABLE signal_logging(di INT,machine TEXT,ts INT,datetime TEXT,signal Text)\";\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 940,
+        "wires": [
+            [
+                "36eee47f6751e60c"
+            ]
+        ]
+    },
+    {
+        "id": "c2817406c225c26b",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "9eec77e844600932",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 1420,
+        "wires": [
+            [
+                "5dfe5c55e7b8775b"
+            ]
+        ]
+    },
+    {
+        "id": "5dfe5c55e7b8775b",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "9eec77e844600932",
+        "name": "\"SELECT*FROM",
+        "func": "msg.topic = \"SELECT*FROM signal_logging\" //-> * to selct every column\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 1420,
+        "wires": [
+            [
+                "57e59cd367561842"
+            ]
+        ]
+    },
+    {
+        "id": "b5ebd04bce95c8a1",
+        "type": "comment",
+        "z": "041ba8506125e783",
+        "g": "9eec77e844600932",
+        "name": "read SQLite",
+        "info": "",
+        "x": 170,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "f7b9ceee010761c5",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "d9527beb0a024831",
+        "name": "\"DELETE FROM",
+        "func": "msg.topic = \"DELETE FROM signal_logging\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 1000,
+        "wires": [
+            [
+                "36eee47f6751e60c"
+            ]
+        ]
+    },
+    {
+        "id": "6a4c8551e37c97dc",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "d9527beb0a024831",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 170,
+        "y": 1000,
+        "wires": [
+            [
+                "f7b9ceee010761c5"
+            ]
+        ]
+    },
+    {
+        "id": "32c2c0b3d3d4fd03",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "d9527beb0a024831",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 170,
+        "y": 1060,
+        "wires": [
+            [
+                "b53767f80979c8c2"
+            ]
+        ]
+    },
+    {
+        "id": "b53767f80979c8c2",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "d9527beb0a024831",
+        "name": "\"DROP TABLE",
+        "func": "msg.topic = \"DROP TABLE signal_logging\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 1060,
+        "wires": [
+            [
+                "36eee47f6751e60c"
+            ]
+        ]
+    },
+    {
+        "id": "57e59cd367561842",
+        "type": "sqlite",
+        "z": "041ba8506125e783",
+        "g": "9eec77e844600932",
+        "mydb": "e7b98f1417d024e3",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 700,
+        "y": 1420,
+        "wires": [
+            [
+                "e82045f6043ed873"
+            ]
+        ]
+    },
+    {
+        "id": "e82045f6043ed873",
+        "type": "debug",
+        "z": "041ba8506125e783",
+        "g": "9eec77e844600932",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "6469166792ca27e3",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "9eec77e844600932",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 1480,
+        "wires": [
+            [
+                "f5d7a8ac604e07c9"
+            ]
+        ]
+    },
+    {
+        "id": "f5d7a8ac604e07c9",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "9eec77e844600932",
+        "name": "\"SELECT di FROM",
+        "func": "msg.topic = \"SELECT di FROM signal_logging\" //->to selct only from di column\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 1480,
+        "wires": [
+            [
+                "57e59cd367561842"
+            ]
+        ]
+    },
+    {
+        "id": "257a9498a1b2df89",
+        "type": "mysql",
+        "z": "041ba8506125e783",
+        "g": "97bdc6cb6dcc8fc6",
+        "mydb": "f110849b1ee9066d",
+        "name": "",
+        "x": 630,
+        "y": 1640,
+        "wires": [
+            [
+                "3bac1599c6efafec"
+            ]
+        ]
+    },
+    {
+        "id": "1baca755bf5dbd86",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "97bdc6cb6dcc8fc6",
+        "name": "\"INSERT INTO",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar ts= msg.payload.timestamp;//int\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\n\nmsg.topic= \"INSERT INTO signal_logging(`Digital_Input`, `Machine`, `Timestamp`, `Datetime`, `Signal`)\\\nVALUES(\"+di+\",'\"+machine+\"',\"+ts+\",'\"+datetime+\"','\"+signal+\"')\"\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1640,
+        "wires": [
+            [
+                "257a9498a1b2df89"
+            ]
+        ]
+    },
+    {
+        "id": "490a92cf4eaf3580",
+        "type": "mqtt in",
+        "z": "041ba8506125e783",
+        "g": "97bdc6cb6dcc8fc6",
+        "name": "",
+        "topic": "mdlv",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "5e17b817fab3699f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 1640,
+        "wires": [
+            [
+                "1baca755bf5dbd86"
+            ]
+        ]
+    },
+    {
+        "id": "86134594c52117ea",
+        "type": "comment",
+        "z": "041ba8506125e783",
+        "g": "97bdc6cb6dcc8fc6",
+        "name": "mySQL",
+        "info": "",
+        "x": 150,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "a084184b7c4a30b4",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "97bdc6cb6dcc8fc6",
+        "name": "\"DELETE FROM",
+        "func": "msg.topic = \"DELETE FROM `signal_logging`\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1720,
+        "wires": [
+            [
+                "257a9498a1b2df89"
+            ]
+        ]
+    },
+    {
+        "id": "f1a00bb43249f1e3",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "97bdc6cb6dcc8fc6",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 1720,
+        "wires": [
+            [
+                "a084184b7c4a30b4"
+            ]
+        ]
+    },
+    {
+        "id": "26e15a282995265e",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "9b81ae3f342a57f1",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 1980,
+        "wires": [
+            [
+                "e170eef32eecba61"
+            ]
+        ]
+    },
+    {
+        "id": "e170eef32eecba61",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "9b81ae3f342a57f1",
+        "name": "\"DROP DATABASE",
+        "func": "msg.topic = \"DROP DATABASE `mdlvtest1`\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 1980,
+        "wires": [
+            [
+                "0c429a8d2837935c"
+            ]
+        ]
+    },
+    {
+        "id": "0c429a8d2837935c",
+        "type": "mysql",
+        "z": "041ba8506125e783",
+        "g": "9b81ae3f342a57f1",
+        "mydb": "82b93f8eec1584ec",
+        "name": "",
+        "x": 600,
+        "y": 1980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b18442f1969e6f36",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "9b81ae3f342a57f1",
+        "name": "\"CREATE DATABASE",
+        "func": "msg.topic = \"CREATE DATABASE `mdlvtest1`\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 2040,
+        "wires": [
+            [
+                "0c429a8d2837935c"
+            ]
+        ]
+    },
+    {
+        "id": "935bb00814192b93",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "9b81ae3f342a57f1",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 2040,
+        "wires": [
+            [
+                "b18442f1969e6f36"
+            ]
+        ]
+    },
+    {
+        "id": "c6eb65dd9e292629",
+        "type": "comment",
+        "z": "041ba8506125e783",
+        "g": "9b81ae3f342a57f1",
+        "name": "DROP/CREATE DATABASE",
+        "info": "",
+        "x": 200,
+        "y": 1940,
+        "wires": []
+    },
+    {
+        "id": "19878a11ffcb9836",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "97bdc6cb6dcc8fc6",
+        "name": "\"SELECT * FROM WHERE `Signal` = 'Sensor 1' \" ",
+        "func": "msg.topic = \"SELECT * FROM signal_logging WHERE `Signal` = 'Sensor 1'\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 1780,
+        "wires": [
+            [
+                "257a9498a1b2df89"
+            ]
+        ]
+    },
+    {
+        "id": "db0c54727007ec49",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "97bdc6cb6dcc8fc6",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 1780,
+        "wires": [
+            [
+                "19878a11ffcb9836"
+            ]
+        ]
+    },
+    {
+        "id": "3bac1599c6efafec",
+        "type": "debug",
+        "z": "041ba8506125e783",
+        "g": "97bdc6cb6dcc8fc6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 730,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "c22422255dfefd76",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "9b81ae3f342a57f1",
+        "name": "\"CREATE TABLE `signal_logging2`",
+        "func": "msg.topic= \"CREATE TABLE `signal_logging2`(`di` INT,`machine` TEXT,`ts` BIGINT,`datetime` DATETIME,`signal` Text)\";\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 2140,
+        "wires": [
+            [
+                "0c429a8d2837935c"
+            ]
+        ]
+    },
+    {
+        "id": "7d9dc720761f2686",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "9b81ae3f342a57f1",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 2140,
+        "wires": [
+            [
+                "c22422255dfefd76"
+            ]
+        ]
+    },
+    {
+        "id": "85248e8cd50e3310",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "9b81ae3f342a57f1",
+        "name": "\"DROP TABLE",
+        "func": "msg.topic = \"DROP TABLE `signal_logging2`\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 2100,
+        "wires": [
+            [
+                "0c429a8d2837935c"
+            ]
+        ]
+    },
+    {
+        "id": "96ef801587868dd3",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "9b81ae3f342a57f1",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 2100,
+        "wires": [
+            [
+                "85248e8cd50e3310"
+            ]
+        ]
+    },
+    {
+        "id": "902daabe488f4700",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 1820,
+        "wires": [
+            [
+                "56a7f7eb42cade4f"
+            ]
+        ]
+    },
+    {
+        "id": "56a7f7eb42cade4f",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "name": "\"CREATE TABLE `signal_logging2`",
+        "func": "msg.topic= \"CREATE TABLE `signal_logging2`(`di` INT,`machine` TEXT,`ts` BIGINT,`datetime` DATETIME,`signal` Text)\";\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 1820,
+        "wires": [
+            [
+                "257a9498a1b2df89"
+            ]
+        ]
+    },
+    {
+        "id": "2b56e732039b6e25",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "4f63cb48f3bf54e6",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 2300,
+        "wires": [
+            [
+                "bc76a1874c139a03"
+            ]
+        ]
+    },
+    {
+        "id": "bc76a1874c139a03",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "4f63cb48f3bf54e6",
+        "name": "\"DROP DATABASE",
+        "func": "msg.topic = \"DROP DATABASE `mdlvtest2`\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 2300,
+        "wires": [
+            [
+                "5794eb57b24bab25"
+            ]
+        ]
+    },
+    {
+        "id": "5794eb57b24bab25",
+        "type": "mysql",
+        "z": "041ba8506125e783",
+        "g": "4f63cb48f3bf54e6",
+        "mydb": "540129466893353d",
+        "name": "",
+        "x": 600,
+        "y": 2300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cf1032f39c9fe7cf",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "4f63cb48f3bf54e6",
+        "name": "\"CREATE DATABASE",
+        "func": "msg.topic = \"CREATE DATABASE `mdlvtest2`\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 2360,
+        "wires": [
+            [
+                "5794eb57b24bab25"
+            ]
+        ]
+    },
+    {
+        "id": "ff52d57910b28267",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "4f63cb48f3bf54e6",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 2360,
+        "wires": [
+            [
+                "cf1032f39c9fe7cf"
+            ]
+        ]
+    },
+    {
+        "id": "88177942fb490125",
+        "type": "comment",
+        "z": "041ba8506125e783",
+        "g": "4f63cb48f3bf54e6",
+        "name": "DROP/CREATE DATABASE",
+        "info": "",
+        "x": 200,
+        "y": 2260,
+        "wires": []
+    },
+    {
+        "id": "09f44e9661723c19",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "4f63cb48f3bf54e6",
+        "name": "\"CREATE TABLE `signal_logging2`",
+        "func": "msg.topic= \"CREATE TABLE `signal_logging2`(`di` INT,`machine` TEXT,`ts` BIGINT,`datetime` DATETIME,`signal` Text)\";\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 2460,
+        "wires": [
+            [
+                "5794eb57b24bab25"
+            ]
+        ]
+    },
+    {
+        "id": "e3f819587c9c8f4b",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "4f63cb48f3bf54e6",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 2460,
+        "wires": [
+            [
+                "09f44e9661723c19"
+            ]
+        ]
+    },
+    {
+        "id": "b4b898cdfacc76c5",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "g": "4f63cb48f3bf54e6",
+        "name": "\"DROP TABLE",
+        "func": "msg.topic = \"DROP TABLE `signal_logging2`\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 2420,
+        "wires": [
+            [
+                "5794eb57b24bab25"
+            ]
+        ]
+    },
+    {
+        "id": "4a5776fdc2c75802",
+        "type": "inject",
+        "z": "041ba8506125e783",
+        "g": "4f63cb48f3bf54e6",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 2420,
+        "wires": [
+            [
+                "b4b898cdfacc76c5"
+            ]
+        ]
+    },
+    {
+        "id": "f5bcc317851830c3",
+        "type": "comment",
+        "z": "041ba8506125e783",
+        "name": "APPLICATION",
+        "info": "",
+        "x": 180,
+        "y": 2600,
+        "wires": []
+    },
+    {
+        "id": "9f3fad71b69239eb",
+        "type": "switch",
+        "z": "041ba8506125e783",
+        "name": "",
+        "property": "payload.signal",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "E-stop",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 350,
+        "y": 2700,
+        "wires": [
+            [
+                "3b500a150c204c2d",
+                "340f53a4d6ef19de"
+            ]
+        ]
+    },
+    {
+        "id": "3b500a150c204c2d",
+        "type": "debug",
+        "z": "041ba8506125e783",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 430,
+        "y": 2640,
+        "wires": []
+    },
+    {
+        "id": "69c0c52fc6084cb7",
+        "type": "mqtt in",
+        "z": "041ba8506125e783",
+        "name": "",
+        "topic": "mdlv",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "5e17b817fab3699f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 2700,
+        "wires": [
+            [
+                "9f3fad71b69239eb"
+            ]
+        ]
+    },
+    {
+        "id": "340f53a4d6ef19de",
+        "type": "switch",
+        "z": "041ba8506125e783",
+        "name": "",
+        "property": "payload.onoff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 530,
+        "y": 2700,
+        "wires": [
+            [
+                "0da884df519dfa87"
+            ],
+            [
+                "fe354746c7a06e42"
+            ]
+        ]
+    },
+    {
+        "id": "0da884df519dfa87",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "name": "E-stop_on(ts)",
+        "func": "flow.set(\"E-stop_on\",msg.payload.timestamp)\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 2680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fe354746c7a06e42",
+        "type": "function",
+        "z": "041ba8506125e783",
+        "name": "E-stop_off(ts)",
+        "func": "var es_off = msg.payload.timestamp;\nvar es_on = flow.get(\"E-stop_on\");\nvar downtime;\n\ndowntime= es_off - es_on;\ndowntime= downtime/1000; // change milisecond to second\ndowntime= downtime.toFixed(2); //change to 2 decimal (string)\ndowntime= parseFloat(downtime);// change string to float\n\nmsg.payload = downtime;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 2740,
+        "wires": [
+            [
+                "8d620be3cd5f7151"
+            ]
+        ]
+    },
+    {
+        "id": "8d620be3cd5f7151",
+        "type": "debug",
+        "z": "041ba8506125e783",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 790,
+        "y": 2800,
+        "wires": []
+    },
+    {
+        "id": "4ea2d87515d8ec09",
+        "type": "comment",
+        "z": "041ba8506125e783",
+        "name": "Downtime",
+        "info": "",
+        "x": 200,
+        "y": 2640,
+        "wires": []
+    },
+    {
+        "id": "5e17b817fab3699f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e7b98f1417d024e3",
+        "type": "sqlitedb",
+        "db": "C:\\Users\\suhaimi\\Documents\\RID\\MDLV\\mdlvTest1.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "f110849b1ee9066d",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "localhost",
+        "port": "3306",
+        "db": "datalogging",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "82b93f8eec1584ec",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "mdlvtest1",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "540129466893353d",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "mdlvtest2",
+        "tz": "",
+        "charset": "UTF8"
+    }
+]
