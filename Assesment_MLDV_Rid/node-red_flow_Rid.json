@@ -1,0 +1,2663 @@
+[
+    {
+        "id": "543126881ccc6621",
+        "type": "tab",
+        "label": "Assessment_Ridhuan",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2b0383a0d248199b",
+        "type": "group",
+        "z": "543126881ccc6621",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "86b84eb322a146db",
+            "75a0785906544ae4",
+            "2ddd7fb1948bdd48",
+            "abd7ce77ace1bbda",
+            "5d95c9868af4fd6b",
+            "11d2479d2e2378c8",
+            "759e25988c23a084",
+            "73d8a0ce35f70bb5",
+            "800cd9c7dfe3868a"
+        ],
+        "x": 204,
+        "y": 2659,
+        "w": 622,
+        "h": 342
+    },
+    {
+        "id": "e2de5733741a020c",
+        "type": "s7 in",
+        "z": "543126881ccc6621",
+        "endpoint": "a2e083367df66ec7",
+        "mode": "single",
+        "variable": " Yellow Tower Light,,,,",
+        "diff": true,
+        "name": "",
+        "x": 480,
+        "y": 780,
+        "wires": [
+            [
+                "e37d8b9ae191731c"
+            ]
+        ]
+    },
+    {
+        "id": "f86fcfe6e8d825fb",
+        "type": "s7 in",
+        "z": "543126881ccc6621",
+        "endpoint": "a2e083367df66ec7",
+        "mode": "single",
+        "variable": " Red Tower Light,,,,",
+        "diff": true,
+        "name": "",
+        "x": 470,
+        "y": 720,
+        "wires": [
+            [
+                "5d764d53c3eea887"
+            ]
+        ]
+    },
+    {
+        "id": "1d0ff262b7cd233f",
+        "type": "s7 in",
+        "z": "543126881ccc6621",
+        "endpoint": "a2e083367df66ec7",
+        "mode": "single",
+        "variable": " Green Tower Light,,,,",
+        "diff": true,
+        "name": "",
+        "x": 470,
+        "y": 660,
+        "wires": [
+            [
+                "b2b73debb3aa0f66"
+            ]
+        ]
+    },
+    {
+        "id": "b2b73debb3aa0f66",
+        "type": "change",
+        "z": "543126881ccc6621",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 660,
+        "wires": [
+            [
+                "7463550778e9033d"
+            ]
+        ]
+    },
+    {
+        "id": "5d764d53c3eea887",
+        "type": "change",
+        "z": "543126881ccc6621",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 720,
+        "wires": [
+            [
+                "2f76587884f4993c"
+            ]
+        ]
+    },
+    {
+        "id": "e37d8b9ae191731c",
+        "type": "change",
+        "z": "543126881ccc6621",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 780,
+        "wires": [
+            [
+                "8aed74a730a9eeaf"
+            ]
+        ]
+    },
+    {
+        "id": "7463550778e9033d",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"green_TL\";\n\nmsg.payload = {\n    onoff:di,\n    timestamp:ts,\n    date:dts,\n    MachineID:machine,\n    signal:signal\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 660,
+        "wires": [
+            [
+                "42adc7e81246fce3"
+            ]
+        ]
+    },
+    {
+        "id": "2f76587884f4993c",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"red_TL\";\n\nmsg.payload = {\n    onoff:di,\n    timestamp:ts,\n    date:dts,\n    MachineID:machine,\n    signal:signal\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 720,
+        "wires": [
+            [
+                "42adc7e81246fce3"
+            ]
+        ]
+    },
+    {
+        "id": "8aed74a730a9eeaf",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"yellow_TL\";\n\nmsg.payload = {\n    onoff:di,\n    timestamp:ts,\n    date:dts,\n    MachineID:machine,\n    signal:signal\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 780,
+        "wires": [
+            [
+                "42adc7e81246fce3"
+            ]
+        ]
+    },
+    {
+        "id": "421dcb1d2b37578d",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"Sensor 1\";\n\nmsg.payload = {\n    onoff:di,\n    date:dts,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 260,
+        "wires": [
+            [
+                "42adc7e81246fce3"
+            ]
+        ]
+    },
+    {
+        "id": "eed1a2b3f8aa2aec",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"Sensor 2\";\n\nmsg.payload = {\n    onoff:di,\n    date:dts,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 340,
+        "wires": [
+            [
+                "42adc7e81246fce3"
+            ]
+        ]
+    },
+    {
+        "id": "16d7ad5930ef809a",
+        "type": "trigger",
+        "z": "543126881ccc6621",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "num",
+        "op2type": "num",
+        "duration": "2",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1220,
+        "y": 380,
+        "wires": [
+            [
+                "b5475c4c2e38bd2a"
+            ]
+        ]
+    },
+    {
+        "id": "b5475c4c2e38bd2a",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"Inductive Sensor\";\n\nmsg.payload = {\n    onoff:di,\n    date:dts,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 420,
+        "wires": [
+            [
+                "42adc7e81246fce3"
+            ]
+        ]
+    },
+    {
+        "id": "8900b1a440f98438",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"Sensor 3\";\n\nmsg.payload = {\n    onoff:di,\n    date:dts,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 500,
+        "wires": [
+            [
+                "42adc7e81246fce3"
+            ]
+        ]
+    },
+    {
+        "id": "7b9fd9781362674d",
+        "type": "comment",
+        "z": "543126881ccc6621",
+        "name": "Sensor",
+        "info": "",
+        "x": 450,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "42adc7e81246fce3",
+        "type": "mqtt out",
+        "z": "543126881ccc6621",
+        "name": "",
+        "topic": "OEE_kit",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5e17b817fab3699f",
+        "x": 1680,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "aef08bf0bbfd5392",
+        "type": "s7 in",
+        "z": "543126881ccc6621",
+        "endpoint": "a2e083367df66ec7",
+        "mode": "single",
+        "variable": " Position Sensor 1 (HW:= Photoelectric),,,,",
+        "diff": true,
+        "name": "",
+        "x": 540,
+        "y": 220,
+        "wires": [
+            [
+                "3ff7a6f0b45719b5"
+            ]
+        ]
+    },
+    {
+        "id": "46b2013bbdae5ffd",
+        "type": "s7 in",
+        "z": "543126881ccc6621",
+        "endpoint": "a2e083367df66ec7",
+        "mode": "single",
+        "variable": " Position Sensor 2 (HW:= Photoelectric),,,,",
+        "diff": true,
+        "name": "",
+        "x": 540,
+        "y": 300,
+        "wires": [
+            [
+                "fb0b1e0a3302ce55"
+            ]
+        ]
+    },
+    {
+        "id": "d24fc484f6da359f",
+        "type": "s7 in",
+        "z": "543126881ccc6621",
+        "endpoint": "a2e083367df66ec7",
+        "mode": "single",
+        "variable": " Part Reject Sensor (HW:= Inductive),,,,",
+        "diff": true,
+        "name": "",
+        "x": 530,
+        "y": 380,
+        "wires": [
+            [
+                "7dd1768e7b6ab373"
+            ]
+        ]
+    },
+    {
+        "id": "1f229aad31223bfe",
+        "type": "s7 in",
+        "z": "543126881ccc6621",
+        "endpoint": "a2e083367df66ec7",
+        "mode": "single",
+        "variable": " Position Sensor 3 (HW:= Photoelectric),,,,",
+        "diff": true,
+        "name": "",
+        "x": 540,
+        "y": 460,
+        "wires": [
+            [
+                "1b9638ddb4be7d19"
+            ]
+        ]
+    },
+    {
+        "id": "3ff7a6f0b45719b5",
+        "type": "change",
+        "z": "543126881ccc6621",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 220,
+        "wires": [
+            [
+                "421dcb1d2b37578d"
+            ]
+        ]
+    },
+    {
+        "id": "fb0b1e0a3302ce55",
+        "type": "change",
+        "z": "543126881ccc6621",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 300,
+        "wires": [
+            [
+                "eed1a2b3f8aa2aec"
+            ]
+        ]
+    },
+    {
+        "id": "7dd1768e7b6ab373",
+        "type": "change",
+        "z": "543126881ccc6621",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1040,
+        "y": 380,
+        "wires": [
+            [
+                "16d7ad5930ef809a"
+            ]
+        ]
+    },
+    {
+        "id": "1b9638ddb4be7d19",
+        "type": "change",
+        "z": "543126881ccc6621",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 460,
+        "wires": [
+            [
+                "8900b1a440f98438"
+            ]
+        ]
+    },
+    {
+        "id": "50940db643166ca4",
+        "type": "comment",
+        "z": "543126881ccc6621",
+        "name": "Write Influxdb",
+        "info": "",
+        "x": 450,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "0e97dc5233492373",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "all_events_ridhuan",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\n\nvar sensor1 = msg.payload.sensor1 \nvar sensor2 = msg.payload.sensor2\nvar sensor3 = msg.payload.sensor3\nvar reject = msg.payload.reject\nvar e_stop = msg.payload.e_stop\nvar start = msg.payload.start\nvar motor1 = msg.payload.motor1\nvar motor2 = msg.payload.motor2 \nvar red_TL = msg.payload.red_TL \nvar yellow_TL = msg.payload.yellow_TL\nvar green_TL = msg.payload.green_TL\n\n\n\nmsg.payload=[{measurement:\"all_events_ridhuan\",\n                fields:{\n                    \n                    _1_date:datetime,\n                    sensor1:sensor1, \n                    sensor2:sensor2,\n                    sensor3:sensor3,\n                    reject:reject,\n                    e_stop:e_stop,\n                    start:start,\n                    motor1:motor1,\n                    motor2:motor2,\n                    green_TL:green_TL,\n                    red_TL:red_TL,\n                    yellow_TL:yellow_TL \n                },\n                tags:{\n                    _2_MachineID:machine\n                    \n                },\n                timestamp:ts\n    \n}\n    \n    ]\n    \n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 1720,
+        "wires": [
+            [
+                "eeab5975a8353e0c"
+            ]
+        ]
+    },
+    {
+        "id": "eeab5975a8353e0c",
+        "type": "influxdb batch",
+        "z": "543126881ccc6621",
+        "influxdb": "6d7bf7ac4eb2ad1c",
+        "precision": "ms",
+        "retentionPolicy": "",
+        "name": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1160,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "4ce2d582553c35a5",
+        "type": "mqtt in",
+        "z": "543126881ccc6621",
+        "name": "",
+        "topic": "machine_monitoring",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "5e17b817fab3699f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 470,
+        "y": 1720,
+        "wires": [
+            [
+                "0e97dc5233492373"
+            ]
+        ]
+    },
+    {
+        "id": "9626572e29599288",
+        "type": "switch",
+        "z": "543126881ccc6621",
+        "name": "",
+        "property": "payload.signal",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Sensor 1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Sensor 2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inductive Sensor",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Sensor 3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "e_stop",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "start",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "green_TL",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "red_TL",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "yellow_TL",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "motor1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "motor2",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 11,
+        "x": 570,
+        "y": 1360,
+        "wires": [
+            [
+                "adf1c736b38c5027"
+            ],
+            [
+                "246baea7fee15d4a"
+            ],
+            [
+                "732e200fe261d26c"
+            ],
+            [
+                "f220caca998b0910"
+            ],
+            [
+                "a3489145767f1bf3"
+            ],
+            [
+                "37456c1aa20d92ad"
+            ],
+            [
+                "cb38b91ca3aba105"
+            ],
+            [
+                "df72d0f73aa5d031"
+            ],
+            [
+                "303c6d647b706b4e"
+            ],
+            [
+                "e020ccae118b83d2"
+            ],
+            [
+                "e9251c29b766f861"
+            ]
+        ]
+    },
+    {
+        "id": "51d744bcbaceadeb",
+        "type": "mqtt in",
+        "z": "543126881ccc6621",
+        "name": "",
+        "topic": "OEE_kit",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "5e17b817fab3699f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 420,
+        "y": 1360,
+        "wires": [
+            [
+                "9626572e29599288"
+            ]
+        ]
+    },
+    {
+        "id": "09f229d7d45fda3e",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "Sensor 1_on(ts)",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\nvar s1_on = msg.payload.onoff;\n\nvar sensor2 = 0\nvar sensor3 = 0\nvar reject =0\nvar e_stop =0\nvar start = 0\nvar motor1 = 0\nvar motor2 = 0\nvar red_TL = 0\nvar yellow_TL = 0\nvar green_TL = 0\n\n\n\nif(s1_on==1){\n    flow.set(\"s1_on\",1);\n}\n\n        \nmsg.payload={\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    sensor1:s1_on,\n                    \n                    sensor2:sensor2,\n                    sensor3:sensor3,\n                    reject:reject,\n                    e_stop:e_stop,\n                    start:start,\n                    motor1:motor1,\n                    motor2:motor2,\n                    green_TL:green_TL,\n                    red_TL:red_TL,\n                    yellow_TL:yellow_TL     \n};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 1100,
+        "wires": [
+            [
+                "3b1c57f9999df30a"
+            ]
+        ]
+    },
+    {
+        "id": "88c19b51f330457c",
+        "type": "comment",
+        "z": "543126881ccc6621",
+        "name": "Part Count",
+        "info": "",
+        "x": 420,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "a8963e30cff5b2cc",
+        "type": "comment",
+        "z": "543126881ccc6621",
+        "name": "Reset Context Data",
+        "info": "",
+        "x": 450,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "9e948c6d55ddbf39",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "Sensor 2_on(ts)",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\nvar s2_on = msg.payload.onoff\n\nvar sensor1 = 0\nvar sensor3 = 0\nvar reject =0\nvar e_stop =0\nvar start = 0\nvar motor1 = 0\nvar motor2 = 0\nvar red_TL = 0\nvar yellow_TL = 0\nvar green_TL = 0\n\nif(s2_on==1){\n    flow.set(\"s2_on\",1);\n}\nmsg.payload={\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    sensor2:s2_on,\n\n                    sensor1:sensor1, \n                    sensor3:sensor3,\n                    reject:reject,\n                    e_stop:e_stop,\n                    start:start,\n                    motor1:motor1,\n                    motor2:motor2,\n                    green_TL:green_TL,\n                    red_TL:red_TL,\n                    yellow_TL:yellow_TL\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 1140,
+        "wires": [
+            [
+                "3b1c57f9999df30a"
+            ]
+        ]
+    },
+    {
+        "id": "f220caca998b0910",
+        "type": "switch",
+        "z": "543126881ccc6621",
+        "name": "Sensor 3",
+        "property": "payload.onoff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 800,
+        "y": 1260,
+        "wires": [
+            [
+                "864eeb90b8eed9da",
+                "3a5e1bbf578ae5f0"
+            ]
+        ]
+    },
+    {
+        "id": "3696ebd69b16f45e",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "Inductive Sensor_on(ts)",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\nvar is_on = msg.payload.onoff\n\nvar sensor1 = 0\nvar sensor2 = 0\nvar sensor3 = 0\nvar e_stop =0\nvar start = 0\nvar motor1 = 0\nvar motor2 = 0\nvar red_TL = 0\nvar yellow_TL = 0\nvar green_TL = 0\n\nif(is_on==1){\n    flow.set(\"is_on\",1);\n}\n\nmsg.payload={\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    reject:is_on,\n    \n                    sensor1:sensor1, \n                    sensor2:sensor2,\n                    sensor3:sensor3,\n                    e_stop:e_stop,\n                    start:start,\n                    motor1:motor1,\n                    motor2:motor2,\n                    green_TL:green_TL,\n                    red_TL:red_TL,\n                    yellow_TL:yellow_TL \n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 1180,
+        "wires": [
+            [
+                "3b1c57f9999df30a"
+            ]
+        ]
+    },
+    {
+        "id": "864eeb90b8eed9da",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "Sensor 3_on(ts)",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\nvar s3_on = msg.payload.onoff\n\n//retrive counted part---------------------------\nvar cylcle_time;\nvar total_cycle_time;\nvar part_count=flow.get(\"part_count\");\nvar ok_part=flow.get(\"ok_part\");\nvar ng_part=flow.get(\"ng_part\");\n\n\n//retrive timestamp start & sensor 3-----------\nvar motor1_ts = flow.get(\"motor1_ts\");\nvar s3_ts = msg.payload.timestamp;\n\n//retrive sensor signal-----------------------------\nvar s1_on = flow.get(\"s1_on\");\nvar s2_on = flow.get(\"s2_on\");\nvar is_on = flow.get(\"is_on\");\n\n// Calculate Cycle time ------------------------------    \ncycle_time = s3_ts - motor1_ts;\ncycle_time= cycle_time/1000; // change milisecond to second\ncycle_time= cycle_time.toFixed(2); //change to 2 decimal (string)\ncycle_time= parseFloat(cycle_time)\n\ntotal_cycle_time = flow.get(\"total_cycle_time\") + cycle_time;\nflow.set(\"total_cycle_time\",total_cycle_time);  \n\n// Count Cycle part---------------------------------\nif(s1_on==1 && s3_on==1){\n    part_count++;\n    flow.set(\"part_count\",part_count);\n}\n\n//count ok part-----------------------------------------\nif(s2_on==1 && is_on==0 && s3_on==1){\n    ok_part++\n    flow.set(\"ok_part\",ok_part);\n}\n\n//count ng part-----------------------------------------\nif(s2_on==1 && is_on==1 && s3_on==1){\n    ng_part++\n    flow.set(\"ng_part\",ng_part);\n}\n\n// RESET SENSOR----------------------------------------\n\nif (s3_on==1){\nflow.set(\"is_on\",0);\nflow.set(\"s1_on\",0);\nflow.set(\"s2_on\",0);\n\n}\n\n\nmsg.payload={\n\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    total_cycle_time:total_cycle_time,\n    part_count:part_count,\n    ok_part:ok_part,\n    ng_part:ng_part\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 1260,
+        "wires": [
+            [
+                "4ac9cf8715223a93"
+            ]
+        ]
+    },
+    {
+        "id": "3b1c57f9999df30a",
+        "type": "mqtt out",
+        "z": "543126881ccc6621",
+        "name": "",
+        "topic": "machine_monitoring",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5e17b817fab3699f",
+        "x": 1380,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "344c6e8a0b5d9d59",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "flow.set(\"flow\",0);",
+        "func": "flow.set(\"part_count\",msg.payload);\nflow.set(\"ok_part\",msg.payload);\nflow.set(\"ng_part\",msg.payload);\nflow.set(\"cycle_time\",msg.payload);\nflow.set(\"total_cycle_time\",msg.payload);  \n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 3080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f10e9973c6c11239",
+        "type": "inject",
+        "z": "543126881ccc6621",
+        "name": "Reset Counter",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 270,
+        "y": 3080,
+        "wires": [
+            [
+                "344c6e8a0b5d9d59"
+            ]
+        ]
+    },
+    {
+        "id": "4b7ed5911448a38e",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "flow.set(\"flow\",0);",
+        "func": "flow.set(\"is_on\",msg.payload);\nflow.set(\"s1_on\",msg.payload);\nflow.set(\"s2_on\",msg.payload);\nflow.set(\"s3_on\",msg.payload);\nflow.set(\"tower_light\",msg.payload);\nflow.set(\"start_ts\",msg.payload);\nflow.set(\"s1_ts\",msg.payload);\nflow.set(\"E-stop_on\",msg.payload);\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 3140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a464894fda05e86e",
+        "type": "inject",
+        "z": "543126881ccc6621",
+        "name": "Reset Sensor",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 270,
+        "y": 3140,
+        "wires": [
+            [
+                "4b7ed5911448a38e"
+            ]
+        ]
+    },
+    {
+        "id": "387669cc294df659",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"e_stop\";\n\nflow.set(\"es_status\",di);\n\nmsg.payload = {\n    onoff:di,\n    date:dts,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 560,
+        "wires": [
+            [
+                "42adc7e81246fce3"
+            ]
+        ]
+    },
+    {
+        "id": "98c31139367d1933",
+        "type": "s7 in",
+        "z": "543126881ccc6621",
+        "endpoint": "a2e083367df66ec7",
+        "mode": "single",
+        "variable": " Emergency Stop (HW:= NC),,,,",
+        "diff": true,
+        "name": "",
+        "x": 510,
+        "y": 560,
+        "wires": [
+            [
+                "39da468ab8f4d5a5"
+            ]
+        ]
+    },
+    {
+        "id": "39da468ab8f4d5a5",
+        "type": "change",
+        "z": "543126881ccc6621",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 560,
+        "wires": [
+            [
+                "387669cc294df659"
+            ]
+        ]
+    },
+    {
+        "id": "4ab2f93b2c7359f4",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "cycleCount_ridhuan",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int            //fields\nvar cycle_time = msg.payload.cycle_time;\nvar part_count = msg.payload.part_count;\n\n\n\nmsg.payload=[{measurement:\"cycleCount_ridhuan\",\n                fields:{\n                    \n                    _1_date:datetime,\n                    _3_part_count:part_count,\n                },\n                tags:{\n                    _2_MachineID:machine\n                    \n                },\n                timestamp:ts\n    \n}\n    \n    ]\n    \n\n    \nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 1760,
+        "wires": [
+            [
+                "eeab5975a8353e0c",
+                "36a2bbd82484c10f"
+            ]
+        ]
+    },
+    {
+        "id": "5ef75aea8a11159d",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "totalNg_ridhuan",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int            //fields\nvar ng_part = msg.payload.ng_part;\n\n\n\nmsg.payload=[{measurement:\"totalNg_ridhuan\",\n                fields:{\n                    \n                    _1_date:datetime,\n                    _3_ng_part:ng_part,\n                },\n                tags:{\n                    _2_MachineID:machine\n                    \n                },\n                timestamp:ts\n    \n}\n    \n    ]\n    \n \n    \nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 1800,
+        "wires": [
+            [
+                "eeab5975a8353e0c"
+            ]
+        ]
+    },
+    {
+        "id": "e75bfad903717984",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "totalOk_ridhuan",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int         //fields\nvar ok_part = msg.payload.ok_part;\n\n\n \n\nmsg.payload=[{measurement:\"totalOk_ridhuan\",\n                fields:{\n                    \n                    _1_date:datetime,\n                    _3_ok_part:ok_part,\n                },\n                tags:{\n                    _2_MachineID:machine\n                    \n                },\n                timestamp:ts\n    \n}\n    \n    ]\n    \n   \nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 1840,
+        "wires": [
+            [
+                "eeab5975a8353e0c"
+            ]
+        ]
+    },
+    {
+        "id": "27db9bed669bb129",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "downtime_ridhuan",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\nvar downtime = msg.payload.downtime;\nvar duration = msg.payload.duration;\nvar counter = msg.payload.counter;\n\n\nmsg.payload=[{measurement:\"downtime_ridhuan\",\n                fields:{\n                    \n                    _1_date:datetime,\n                    _4_onoff:di,\n                    _5_duration:duration,\n                    _6_downtime:downtime,\n                    _7_counter:counter,\n                },\n                tags:{\n                    _2_MachineID:machine,\n                    _3_signal:signal\n                },\n                timestamp:ts\n    \n}\n    \n    ]\n    \n    \n    \nreturn msg;\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 1920,
+        "wires": [
+            [
+                "eeab5975a8353e0c"
+            ]
+        ]
+    },
+    {
+        "id": "bb5445908eb69365",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "totalCT_ridhuan",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\nvar total_cycle_time = msg.payload.total_cycle_time;\n\n\n\n\nmsg.payload=[{measurement:\"totalCT_ridhuan\",\n                fields:{\n                    \n                    _1_date:datetime,\n                    _3_total_cycle_time:total_cycle_time\n                },\n                tags:{\n                    _2_MachineID:machine\n                    \n                },\n                timestamp:ts\n    \n}\n    \n    ]\n    \n\n    \nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 1880,
+        "wires": [
+            [
+                "eeab5975a8353e0c"
+            ]
+        ]
+    },
+    {
+        "id": "bb4e187086888ca1",
+        "type": "change",
+        "z": "543126881ccc6621",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 600,
+        "wires": [
+            [
+                "e02ceb2d08bab376"
+            ]
+        ]
+    },
+    {
+        "id": "e02ceb2d08bab376",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"start\";\n\n\nmsg.payload = {\n    onoff:di,\n    date:dts,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 600,
+        "wires": [
+            [
+                "42adc7e81246fce3"
+            ]
+        ]
+    },
+    {
+        "id": "732e200fe261d26c",
+        "type": "switch",
+        "z": "543126881ccc6621",
+        "name": "IS",
+        "property": "payload.onoff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 790,
+        "y": 1180,
+        "wires": [
+            [
+                "3696ebd69b16f45e"
+            ]
+        ]
+    },
+    {
+        "id": "246baea7fee15d4a",
+        "type": "switch",
+        "z": "543126881ccc6621",
+        "name": "Sensor 2",
+        "property": "payload.onoff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 800,
+        "y": 1140,
+        "wires": [
+            [
+                "9e948c6d55ddbf39"
+            ]
+        ]
+    },
+    {
+        "id": "adf1c736b38c5027",
+        "type": "switch",
+        "z": "543126881ccc6621",
+        "name": "Sensor 1",
+        "property": "payload.onoff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 800,
+        "y": 1100,
+        "wires": [
+            [
+                "09f229d7d45fda3e"
+            ]
+        ]
+    },
+    {
+        "id": "cb38b91ca3aba105",
+        "type": "switch",
+        "z": "543126881ccc6621",
+        "name": "green_TL",
+        "property": "payload.onoff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 800,
+        "y": 1460,
+        "wires": [
+            [
+                "1d4e356620832a8e"
+            ]
+        ]
+    },
+    {
+        "id": "37456c1aa20d92ad",
+        "type": "switch",
+        "z": "543126881ccc6621",
+        "name": "start",
+        "property": "payload.onoff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 790,
+        "y": 1420,
+        "wires": [
+            [
+                "6488d40067639dd3"
+            ]
+        ]
+    },
+    {
+        "id": "a3489145767f1bf3",
+        "type": "switch",
+        "z": "543126881ccc6621",
+        "name": "e-stop",
+        "property": "payload.onoff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 790,
+        "y": 1320,
+        "wires": [
+            [
+                "b22917d8d63401db",
+                "f33f7f4a69486fc0"
+            ],
+            [
+                "5bf8bcd5b3ab75eb"
+            ]
+        ]
+    },
+    {
+        "id": "df72d0f73aa5d031",
+        "type": "switch",
+        "z": "543126881ccc6621",
+        "name": "red_TL",
+        "property": "payload.onoff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 800,
+        "y": 1500,
+        "wires": [
+            [
+                "fb2e972943f4cfd6"
+            ]
+        ]
+    },
+    {
+        "id": "303c6d647b706b4e",
+        "type": "switch",
+        "z": "543126881ccc6621",
+        "name": "yellow_TL",
+        "property": "payload.onoff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 800,
+        "y": 1540,
+        "wires": [
+            [
+                "0c0bca68b5dbe823"
+            ]
+        ]
+    },
+    {
+        "id": "e020ccae118b83d2",
+        "type": "switch",
+        "z": "543126881ccc6621",
+        "name": "motor1",
+        "property": "payload.onoff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 800,
+        "y": 1580,
+        "wires": [
+            [
+                "7239706299ce99c7"
+            ]
+        ]
+    },
+    {
+        "id": "e9251c29b766f861",
+        "type": "switch",
+        "z": "543126881ccc6621",
+        "name": "motor2",
+        "property": "payload.onoff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 800,
+        "y": 1620,
+        "wires": [
+            [
+                "4f9db4d9de6b3519"
+            ]
+        ]
+    },
+    {
+        "id": "6488d40067639dd3",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "start_on(ts)",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\nvar start_on = msg.payload.onoff\n\nvar sensor1 = 0\nvar sensor2 = 0\nvar sensor3 = 0\nvar reject =0\nvar e_stop =0\nvar motor1 = 0\nvar motor2 = 0\nvar red_TL = 0\nvar yellow_TL = 0\nvar green_TL = 0\n\nif(start_on==1){\n    flow.set(\"start_ts\",ts);\n}\nmsg.payload={\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    start:start_on,\n\n                    sensor1:sensor1, \n                    sensor2:sensor2,\n                    sensor3:sensor3,\n                    reject:reject,\n                    e_stop:e_stop,\n                    motor1:motor1,\n                    motor2:motor2,\n                    green_TL:green_TL,\n                    red_TL:red_TL,\n                    yellow_TL:yellow_TL \n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 1420,
+        "wires": [
+            [
+                "3b1c57f9999df30a"
+            ]
+        ]
+    },
+    {
+        "id": "1d4e356620832a8e",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "green_TL = 1",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\n\nvar green_TL = 1\n\nvar sensor1 = 0\nvar sensor2 = 0\nvar sensor3 = 0\nvar reject =0\nvar e_stop =0\nvar start = 0\nvar motor1 = 0\nvar motor2 = 0\nvar red_TL = 0\nvar yellow_TL = 0\n\nif(green_TL==1){\n    flow.set(\"green_TL\",1);\n}\n\nmsg.payload={\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    green_TL:green_TL,\n\n                    sensor1:sensor1, \n                    sensor2:sensor2,\n                    sensor3:sensor3,\n                    reject:reject,\n                    e_stop:e_stop,\n                    start:start,\n                    motor1:motor1,\n                    motor2:motor2,\n                    red_TL:red_TL,\n                    yellow_TL:yellow_TL\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 1460,
+        "wires": [
+            [
+                "3b1c57f9999df30a"
+            ]
+        ]
+    },
+    {
+        "id": "fb2e972943f4cfd6",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "red_TL = 2",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\n\nvar red_TL = 1\n\nvar sensor1 = 0\nvar sensor2 = 0\nvar sensor3 = 0\nvar reject =0\nvar e_stop =0\nvar start = 0\nvar motor1 = 0\nvar motor2 = 0\nvar green_TL = 0\nvar yellow_TL = 0\n\nif(red_TL==1){\n    flow.set(\"red_TL\",1);\n}\n\nmsg.payload={\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    red_TL:red_TL,\n    \n                    sensor1:sensor1, \n                    sensor2:sensor2,\n                    sensor3:sensor3,\n                    reject:reject,\n                    e_stop:e_stop,\n                    start:start,\n                    motor1:motor1,\n                    motor2:motor2,\n                    green_TL:green_TL,\n                    yellow_TL:yellow_TL\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 1500,
+        "wires": [
+            [
+                "3b1c57f9999df30a"
+            ]
+        ]
+    },
+    {
+        "id": "0c0bca68b5dbe823",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "yellow_TL = 3",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\n\nvar yellow_TL = 1\n\nvar sensor1 = 0\nvar sensor2 = 0\nvar sensor3 = 0\nvar reject =0\nvar e_stop =0\nvar start = 0\nvar motor1 = 0\nvar motor2 = 0\nvar red_TL = 0\nvar green_TL = 0\n\n\nif(yellow_TL==1){\n    flow.set(\"yellow_TL\",1);\n}\n\nmsg.payload={\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    yellow_TL:yellow_TL,\n    \n                    sensor1:sensor1, \n                    sensor2:sensor2,\n                    sensor3:sensor3,\n                    reject:reject,\n                    e_stop:e_stop,\n                    start:start,\n                    motor1:motor1,\n                    motor2:motor2,\n                    red_TL:red_TL,\n                    green_TL:green_TL\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 1540,
+        "wires": [
+            [
+                "3b1c57f9999df30a"
+            ]
+        ]
+    },
+    {
+        "id": "7239706299ce99c7",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "motor1(ts)",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\n\nvar motor1 = msg.payload.onoff\n\nvar sensor1 = 0\nvar sensor2 = 0\nvar sensor3 = 0\nvar reject =0\nvar e_stop =0\nvar start = 0\nvar motor2 = 0\nvar red_TL = 0\nvar yellow_TL = 0\nvar green_TL = 0\n\nif(motor1==1){\n    flow.set(\"motor1\",1);\n    flow.set(\"motor1_ts\",ts)\n    \n}\n\nmsg.payload={\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    motor1:motor1,\n    \n                    sensor1:sensor1, \n                    sensor2:sensor2,\n                    sensor3:sensor3,\n                    reject:reject,\n                    e_stop:e_stop,\n                    start:start,\n                    motor2:motor2,\n                    green_TL:green_TL,\n                    red_TL:red_TL,\n                    yellow_TL:yellow_TL \n}\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 1580,
+        "wires": [
+            [
+                "3b1c57f9999df30a"
+            ]
+        ]
+    },
+    {
+        "id": "4f9db4d9de6b3519",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "motor2(ts)",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\n\nvar motor2 = msg.payload.onoff\n\nvar sensor1 = 0\nvar sensor2 = 0\nvar sensor3 = 0\nvar reject =0\nvar e_stop =0\nvar start = 0\nvar motor1 = 0\nvar red_TL = 0\nvar yellow_TL = 0\nvar green_TL = 0\n\nif(motor2==1){\n    flow.set(\"motor2\",1);\n}\n\nmsg.payload={\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    motor2:motor2,\n    \n                    sensor1:sensor1, \n                    sensor2:sensor2,\n                    sensor3:sensor3,\n                    reject:reject,\n                    e_stop:e_stop,\n                    start:start,\n                    motor1:motor1,\n                    green_TL:green_TL,\n                    red_TL:red_TL,\n                    yellow_TL:yellow_TL\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 1620,
+        "wires": [
+            [
+                "3b1c57f9999df30a"
+            ]
+        ]
+    },
+    {
+        "id": "b22917d8d63401db",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "E-stop_on(ts)",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\n\nvar downtime= \"ongoing\";\nvar duration = 0;\nvar count= flow.get(\"es_on\");\n\nflow.set(\"es_on\",++count); // add counter value\n\nflow.set(\"E-stop_on\",msg.payload.timestamp); //save Em.Stop_On time\n\nmsg.payload={\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    duration:duration,\n    downtime:downtime,\n    counter:count\n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 1300,
+        "wires": [
+            [
+                "c9dbed1d819168e4"
+            ]
+        ]
+    },
+    {
+        "id": "5bf8bcd5b3ab75eb",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "E-stop_off(ts)",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\n\nvar es_off = msg.payload.timestamp;\nvar es_on = flow.get(\"E-stop_on\");\nvar downtime = \"stoped\";\nvar duration;\n\nduration= es_off - es_on;\nduration= duration/1000; // change milisecond to second\nduration= duration.toFixed(2); //change to 2 decimal (string)\nduration= parseFloat(duration);// change string to float\n\n\n\nmsg.payload={\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    duration:duration,\n    downtime:downtime,\n    counter:flow.get(\"es_on\")\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 1380,
+        "wires": [
+            [
+                "c9dbed1d819168e4"
+            ]
+        ]
+    },
+    {
+        "id": "40bf27574e34fe17",
+        "type": "s7 in",
+        "z": "543126881ccc6621",
+        "endpoint": "a2e083367df66ec7",
+        "mode": "single",
+        "variable": " Output 3 ( Motor Speed),,,,",
+        "diff": true,
+        "name": "",
+        "x": 490,
+        "y": 900,
+        "wires": [
+            [
+                "f9638ff64ba22b2b"
+            ]
+        ]
+    },
+    {
+        "id": "218c096d46ae36d7",
+        "type": "s7 in",
+        "z": "543126881ccc6621",
+        "endpoint": "a2e083367df66ec7",
+        "mode": "single",
+        "variable": " Output 1 ( Motor Operation),,,,",
+        "diff": true,
+        "name": "",
+        "x": 500,
+        "y": 840,
+        "wires": [
+            [
+                "3ab4250ef240b944"
+            ]
+        ]
+    },
+    {
+        "id": "3ab4250ef240b944",
+        "type": "change",
+        "z": "543126881ccc6621",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 840,
+        "wires": [
+            [
+                "72109308488e75ef"
+            ]
+        ]
+    },
+    {
+        "id": "f9638ff64ba22b2b",
+        "type": "change",
+        "z": "543126881ccc6621",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 900,
+        "wires": [
+            [
+                "a442079a711b49f7"
+            ]
+        ]
+    },
+    {
+        "id": "72109308488e75ef",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"motor1\";\n\nmsg.payload = {\n    onoff:di,\n    timestamp:ts,\n    date:dts,\n    MachineID:machine,\n    signal:signal\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 840,
+        "wires": [
+            [
+                "42adc7e81246fce3"
+            ]
+        ]
+    },
+    {
+        "id": "a442079a711b49f7",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "base function",
+        "func": "var di = msg.payload;\nvar machine = \"Machine 1\";\nvar nd = new Date();\nvar ts = nd.getTime();\nvar dts = nd.toLocaleString(\"sv-SE\"); // local time in swidish\nvar signal = \"motor2\";\n\nmsg.payload = {\n    onoff:di,\n    timestamp:ts,\n    date:dts,\n    MachineID:machine,\n    signal:signal\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 900,
+        "wires": [
+            [
+                "42adc7e81246fce3"
+            ]
+        ]
+    },
+    {
+        "id": "4ac9cf8715223a93",
+        "type": "mqtt out",
+        "z": "543126881ccc6621",
+        "name": "",
+        "topic": "machine_calculation",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5e17b817fab3699f",
+        "x": 1360,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "c9dbed1d819168e4",
+        "type": "mqtt out",
+        "z": "543126881ccc6621",
+        "name": "",
+        "topic": "machine_downtime",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5e17b817fab3699f",
+        "x": 1350,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "4f2f76671921ec5f",
+        "type": "mqtt in",
+        "z": "543126881ccc6621",
+        "name": "",
+        "topic": "machine_calculation",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "5e17b817fab3699f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 470,
+        "y": 1820,
+        "wires": [
+            [
+                "5ef75aea8a11159d",
+                "e75bfad903717984",
+                "4ab2f93b2c7359f4",
+                "bb5445908eb69365"
+            ]
+        ]
+    },
+    {
+        "id": "886cfdf9f9f985e1",
+        "type": "mqtt in",
+        "z": "543126881ccc6621",
+        "name": "",
+        "topic": "machine_downtime",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "5e17b817fab3699f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 470,
+        "y": 1920,
+        "wires": [
+            [
+                "27db9bed669bb129"
+            ]
+        ]
+    },
+    {
+        "id": "3a5e1bbf578ae5f0",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "Sensor 3_on(ts)",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\nvar s3_on = msg.payload.onoff\n\nvar sensor1 = 0\nvar sensor2 = 0\nvar reject =0\nvar e_stop =0\nvar start = 0\nvar motor1 = 0\nvar motor2 = 0\nvar red_TL = 0\nvar yellow_TL = 0\nvar green_TL = 0\n\nmsg.payload={\n\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    sensor3:s3_on,\n    \n                    sensor1:sensor1, \n                    sensor2:sensor2,\n                    reject:reject,\n                    e_stop:e_stop,\n                    start:start,\n                    motor1:motor1,\n                    motor2:motor2,\n                    green_TL:green_TL,\n                    red_TL:red_TL,\n                    yellow_TL:yellow_TL \n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 1220,
+        "wires": [
+            [
+                "3b1c57f9999df30a"
+            ]
+        ]
+    },
+    {
+        "id": "f33f7f4a69486fc0",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "E-stop_on(ts)",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\nvar es_on=msg.payload.onoff;\n\nvar sensor1 = 0\nvar sensor2 = 0\nvar sensor3 = 0\nvar reject =0\nvar start = 0\nvar motor1 = 0\nvar motor2 = 0\nvar red_TL = 0\nvar yellow_TL = 0\nvar green_TL = 0\n\n\n\nmsg.payload={\n    onoff:di,\n    date:datetime,\n    MachineID:machine,\n    signal:signal,\n    timestamp:ts,\n    e_stop:es_on,\n\n                    sensor1:sensor1, \n                    sensor2:sensor2,\n                    sensor3:sensor3,\n                    reject:reject,\n                    start:start,\n                    motor1:motor1,\n                    motor2:motor2,\n                    green_TL:green_TL,\n                    red_TL:red_TL,\n                    yellow_TL:yellow_TL \n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 1340,
+        "wires": [
+            [
+                "3b1c57f9999df30a"
+            ]
+        ]
+    },
+    {
+        "id": "36aaa18f39ec41f4",
+        "type": "inject",
+        "z": "543126881ccc6621",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 370,
+        "y": 2480,
+        "wires": [
+            [
+                "8612edd5394ed35a",
+                "4ad004e24964cebe",
+                "42dcc42d423a8319",
+                "457b9cea05aeac61",
+                "0044c31f82e0e9ae",
+                "3fc5e72d9e645aef"
+            ]
+        ]
+    },
+    {
+        "id": "8612edd5394ed35a",
+        "type": "influxdb in",
+        "z": "543126881ccc6621",
+        "influxdb": "6d7bf7ac4eb2ad1c",
+        "name": "all_events_ridhuan",
+        "query": "DELETE FROM all_events_ridhuan",
+        "rawOutput": false,
+        "precision": "ms",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 610,
+        "y": 2380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "087b6f274ff080f2",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "all_events_ridhuan",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\n\nvar sensor1 = msg.payload.sensor1 \nvar sensor2 = msg.payload.sensor2\nvar sensor3 = msg.payload.sensor3\nvar reject = msg.payload.reject\nvar e_stop = msg.payload.e_stop\nvar start = msg.payload.start\nvar motor1 = msg.payload.motor1\nvar motor2 = msg.payload.motor2 \nvar red_TL = msg.payload.red_TL \nvar yellow_TL = msg.payload.yellow_TL\nvar green_TL = msg.payload.green_TL\n\nmsg.topic= \"INSERT INTO `all_events_ridhuan`(`timestamp`, `MachineID`, `Datetime`, `Sensor1`, `Sensor2`, `Sensor3`, `Reject`, `E_stop`, `start`, `Motor1`, `Motor2`,  `Green_TL`, `Red_TL`, `Yellow_TL`)\\\nVALUES ('\"+ts+\"','\"+machine+\"','\"+datetime+\"',\"+sensor1+\",\"+sensor2+\",\"+sensor3+\",\"+reject+\",\"+e_stop+\",\"+start+\",\"+motor1+\",\"+motor2+\",\"+green_TL+\",\"+red_TL+\",\"+yellow_TL+\")\"\n\n    \n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 1980,
+        "wires": [
+            [
+                "62c52b503e66bbfe"
+            ]
+        ]
+    },
+    {
+        "id": "bea476b6ddfc2873",
+        "type": "mqtt in",
+        "z": "543126881ccc6621",
+        "name": "",
+        "topic": "machine_monitoring",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "5e17b817fab3699f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 470,
+        "y": 1980,
+        "wires": [
+            [
+                "087b6f274ff080f2"
+            ]
+        ]
+    },
+    {
+        "id": "8f2f986ffe017f0e",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "cycleCount_ridhuan",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int            //fields\nvar cycle_time = msg.payload.cycle_time;\nvar part_count = msg.payload.part_count;\n\nmsg.topic= \"INSERT INTO `cyclecount_ridhuan`(`timestamp`, `MachineID`, `Datetime`, `Part_Count`)\\\nVALUES ('\"+ts+\"','\"+machine+\"','\"+datetime+\"',\"+part_count+\")\"\n\n\n\n\n    \nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 2020,
+        "wires": [
+            [
+                "62c52b503e66bbfe"
+            ]
+        ]
+    },
+    {
+        "id": "655ec12c88a39963",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "totalNg_ridhuan",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int            //fields\nvar ng_part = msg.payload.ng_part;\n\nmsg.topic= \"INSERT INTO `totalng_ridhuan`(`timestamp`, `MachineID`, `Datetime`, `Total_Ng`)\\\nVALUES ('\"+ts+\"','\"+machine+\"','\"+datetime+\"',\"+ng_part+\")\"\n   \n\n \n    \nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 2060,
+        "wires": [
+            [
+                "62c52b503e66bbfe"
+            ]
+        ]
+    },
+    {
+        "id": "1441914cce88e955",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "totalOk_ridhuan",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int         //fields\nvar ok_part = msg.payload.ok_part;\n\nmsg.topic= \"INSERT INTO `totalok_ridhuan`(`timestamp`, `MachineID`, `Datetime`, `Total_Ok`)\\\nVALUES ('\"+ts+\"','\"+machine+\"','\"+datetime+\"',\"+ok_part+\")\"\n    \n \n\n   \nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 2100,
+        "wires": [
+            [
+                "62c52b503e66bbfe"
+            ]
+        ]
+    },
+    {
+        "id": "210d73f12150c673",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "downtime_ridhuan",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\nvar downtime = msg.payload.downtime;\nvar duration = msg.payload.duration;\nvar counter = msg.payload.counter;\n\nmsg.topic= \"INSERT INTO `downtime_ridhuan`(`MachineID`, `signal`, `onoff`, `Datetime`, `downtime`, `duration`, `counter`, `timestamp`)\\\nVALUES('\"+machine+\"','\"+signal+\"',\"+di+\",'\"+datetime+\"','\"+downtime+\"',\"+duration+\",\"+counter+\",'\"+ts+\"')\"\n\n\n    \n    \nreturn msg;\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 2180,
+        "wires": [
+            [
+                "62c52b503e66bbfe"
+            ]
+        ]
+    },
+    {
+        "id": "af657903c135bbb9",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "name": "totalCT_ridhuan",
+        "func": "var di = msg.payload.onoff; //int\nvar machine = msg.payload.MachineID; //string\nvar signal = msg.payload.signal;//string\nvar datetime = msg.payload.date; // string\nvar ts= msg.payload.timestamp;//int\nvar total_cycle_time = msg.payload.total_cycle_time;\n\nmsg.topic= \"INSERT INTO `totalct_ridhuan`(`timestamp`, `MachineID`, `Datetime`, `Total_Cycle_Time`)\\\nVALUES ('\"+ts+\"','\"+machine+\"','\"+datetime+\"',\"+total_cycle_time+\")\"\n\n\n\n    \nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 2140,
+        "wires": [
+            [
+                "62c52b503e66bbfe"
+            ]
+        ]
+    },
+    {
+        "id": "0d983975397ab1a3",
+        "type": "mqtt in",
+        "z": "543126881ccc6621",
+        "name": "",
+        "topic": "machine_calculation",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "5e17b817fab3699f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 470,
+        "y": 2080,
+        "wires": [
+            [
+                "655ec12c88a39963",
+                "1441914cce88e955",
+                "8f2f986ffe017f0e",
+                "af657903c135bbb9"
+            ]
+        ]
+    },
+    {
+        "id": "0d1343dff75d9254",
+        "type": "mqtt in",
+        "z": "543126881ccc6621",
+        "name": "",
+        "topic": "machine_downtime",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "5e17b817fab3699f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 470,
+        "y": 2180,
+        "wires": [
+            [
+                "210d73f12150c673"
+            ]
+        ]
+    },
+    {
+        "id": "62c52b503e66bbfe",
+        "type": "mysql",
+        "z": "543126881ccc6621",
+        "mydb": "f110849b1ee9066d",
+        "name": "",
+        "x": 1130,
+        "y": 2180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "36a2bbd82484c10f",
+        "type": "influxdb batch",
+        "z": "543126881ccc6621",
+        "influxdb": "47cb68f875ac250b",
+        "precision": "ms",
+        "retentionPolicy": "",
+        "name": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1180,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "4ad004e24964cebe",
+        "type": "influxdb in",
+        "z": "543126881ccc6621",
+        "influxdb": "6d7bf7ac4eb2ad1c",
+        "name": "cycleCount_ridhuan",
+        "query": "DELETE FROM cycleCount_ridhuan",
+        "rawOutput": false,
+        "precision": "ms",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 620,
+        "y": 2420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "42dcc42d423a8319",
+        "type": "influxdb in",
+        "z": "543126881ccc6621",
+        "influxdb": "6d7bf7ac4eb2ad1c",
+        "name": "downtime_ridhuan",
+        "query": "DELETE FROM downtime_ridhuan",
+        "rawOutput": false,
+        "precision": "ms",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 610,
+        "y": 2460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "457b9cea05aeac61",
+        "type": "influxdb in",
+        "z": "543126881ccc6621",
+        "influxdb": "6d7bf7ac4eb2ad1c",
+        "name": "totalCT_ridhuan",
+        "query": "DELETE FROM totalCT_ridhuan",
+        "rawOutput": false,
+        "precision": "ms",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 600,
+        "y": 2500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0044c31f82e0e9ae",
+        "type": "influxdb in",
+        "z": "543126881ccc6621",
+        "influxdb": "6d7bf7ac4eb2ad1c",
+        "name": "totalNg_ridhuan",
+        "query": "DELETE FROM totalNg_ridhuan",
+        "rawOutput": false,
+        "precision": "ms",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 600,
+        "y": 2540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3fc5e72d9e645aef",
+        "type": "influxdb in",
+        "z": "543126881ccc6621",
+        "influxdb": "6d7bf7ac4eb2ad1c",
+        "name": "totalOk_ridhuan",
+        "query": "DELETE FROM totalOk_ridhuan",
+        "rawOutput": false,
+        "precision": "ms",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 600,
+        "y": 2580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4669a1e9c2a86a02",
+        "type": "comment",
+        "z": "543126881ccc6621",
+        "name": "DELETE MEASUREMENT",
+        "info": "",
+        "x": 330,
+        "y": 2440,
+        "wires": []
+    },
+    {
+        "id": "86b84eb322a146db",
+        "type": "mysql",
+        "z": "543126881ccc6621",
+        "g": "2b0383a0d248199b",
+        "mydb": "f110849b1ee9066d",
+        "name": "",
+        "x": 730,
+        "y": 2760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "75a0785906544ae4",
+        "type": "comment",
+        "z": "543126881ccc6621",
+        "g": "2b0383a0d248199b",
+        "name": "DETELE MEASUREMENT",
+        "info": "",
+        "x": 370,
+        "y": 2700,
+        "wires": []
+    },
+    {
+        "id": "2ddd7fb1948bdd48",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "g": "2b0383a0d248199b",
+        "name": "all_events_ridhuan",
+        "func": "msg.topic = \"DELETE FROM `all_events_ridhuan`\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 2760,
+        "wires": [
+            [
+                "86b84eb322a146db"
+            ]
+        ]
+    },
+    {
+        "id": "abd7ce77ace1bbda",
+        "type": "inject",
+        "z": "543126881ccc6621",
+        "g": "2b0383a0d248199b",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 300,
+        "y": 2760,
+        "wires": [
+            [
+                "2ddd7fb1948bdd48",
+                "5d95c9868af4fd6b",
+                "11d2479d2e2378c8",
+                "759e25988c23a084",
+                "73d8a0ce35f70bb5",
+                "800cd9c7dfe3868a"
+            ]
+        ]
+    },
+    {
+        "id": "5d95c9868af4fd6b",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "g": "2b0383a0d248199b",
+        "name": "cyclecount_ridhuan",
+        "func": "msg.topic = \"DELETE FROM `cyclecount_ridhuan`\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 2800,
+        "wires": [
+            [
+                "86b84eb322a146db"
+            ]
+        ]
+    },
+    {
+        "id": "11d2479d2e2378c8",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "g": "2b0383a0d248199b",
+        "name": "downtime_ridhuan",
+        "func": "msg.topic = \"DELETE FROM `downtime_ridhuan`\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 2840,
+        "wires": [
+            [
+                "86b84eb322a146db"
+            ]
+        ]
+    },
+    {
+        "id": "759e25988c23a084",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "g": "2b0383a0d248199b",
+        "name": "\ttotalct_ridhuan",
+        "func": "msg.topic = \"DELETE FROM `totalct_ridhuan`\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 2880,
+        "wires": [
+            [
+                "86b84eb322a146db"
+            ]
+        ]
+    },
+    {
+        "id": "73d8a0ce35f70bb5",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "g": "2b0383a0d248199b",
+        "name": "\ttotalng_ridhuan",
+        "func": "msg.topic = \"DELETE FROM `totalng_ridhuan`\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 2920,
+        "wires": [
+            [
+                "86b84eb322a146db"
+            ]
+        ]
+    },
+    {
+        "id": "800cd9c7dfe3868a",
+        "type": "function",
+        "z": "543126881ccc6621",
+        "g": "2b0383a0d248199b",
+        "name": "totalok_ridhuan",
+        "func": "msg.topic = \"DELETE FROM `totalok_ridhuan`\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 2960,
+        "wires": [
+            [
+                "86b84eb322a146db"
+            ]
+        ]
+    },
+    {
+        "id": "9e9a26f91123fe20",
+        "type": "s7 in",
+        "z": "543126881ccc6621",
+        "endpoint": "a2e083367df66ec7",
+        "mode": "single",
+        "variable": " Start (HW:= NO / PB Green),,,,",
+        "diff": true,
+        "name": "",
+        "x": 510,
+        "y": 600,
+        "wires": [
+            [
+                "bb4e187086888ca1"
+            ]
+        ]
+    },
+    {
+        "id": "8d873ff8ea8d0b3e",
+        "type": "debug",
+        "z": "543126881ccc6621",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 710,
+        "y": 3300,
+        "wires": []
+    },
+    {
+        "id": "c8fb45757ab5f704",
+        "type": "influxdb in",
+        "z": "543126881ccc6621",
+        "influxdb": "6d7bf7ac4eb2ad1c",
+        "name": "",
+        "query": "SELECT*FROM all_events_ridhuan",
+        "rawOutput": false,
+        "precision": "ms",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 440,
+        "y": 3300,
+        "wires": [
+            [
+                "8d873ff8ea8d0b3e"
+            ]
+        ]
+    },
+    {
+        "id": "af5b65b83806e3e4",
+        "type": "inject",
+        "z": "543126881ccc6621",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 3300,
+        "wires": [
+            [
+                "c8fb45757ab5f704"
+            ]
+        ]
+    },
+    {
+        "id": "a2e083367df66ec7",
+        "type": "s7 endpoint",
+        "transport": "iso-on-tcp",
+        "address": "192.168.4.34",
+        "port": "102",
+        "rack": "0",
+        "slot": "1",
+        "localtsaphi": "01",
+        "localtsaplo": "00",
+        "remotetsaphi": "01",
+        "remotetsaplo": "00",
+        "connmode": "rack-slot",
+        "adapter": "",
+        "busaddr": "2",
+        "cycletime": "1000",
+        "timeout": "2000",
+        "name": "",
+        "vartable": [
+            {
+                "addr": "I0.2",
+                "name": " Start (HW:= NO / PB Green),,,,"
+            },
+            {
+                "addr": "I0.5",
+                "name": " Position Sensor 1 (HW:= Photoelectric),,,,"
+            },
+            {
+                "addr": "I0.6",
+                "name": " Position Sensor 2 (HW:= Photoelectric),,,,"
+            },
+            {
+                "addr": "I0.7",
+                "name": " Position Sensor 3 (HW:= Photoelectric),,,,"
+            },
+            {
+                "addr": "I1.0",
+                "name": " Part Reject Sensor (HW:= Inductive),,,,"
+            },
+            {
+                "addr": "I1.1",
+                "name": " Emergency Stop (HW:= NC),,,,"
+            },
+            {
+                "addr": "Q0.0",
+                "name": " Red LED,,,,"
+            },
+            {
+                "addr": "Q0.1",
+                "name": " Yellow LED,,,,"
+            },
+            {
+                "addr": "Q0.2",
+                "name": " Green LED,,,,"
+            },
+            {
+                "addr": "Q0.3",
+                "name": " Output 1 ( Motor Operation),,,,"
+            },
+            {
+                "addr": "Q0.5",
+                "name": " Output 3 ( Motor Speed),,,,"
+            },
+            {
+                "addr": "Q0.6",
+                "name": " Green Tower Light,,,,"
+            },
+            {
+                "addr": "Q0.7",
+                "name": " Yellow Tower Light,,,,"
+            },
+            {
+                "addr": "Q1.0",
+                "name": " Red Tower Light,,,,"
+            },
+            {
+                "addr": "M50.4",
+                "name": "Memory start"
+            }
+        ]
+    },
+    {
+        "id": "5e17b817fab3699f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6d7bf7ac4eb2ad1c",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "mldvrid",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "f110849b1ee9066d",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "localhost",
+        "port": "3306",
+        "db": "datalogging",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "47cb68f875ac250b",
+        "type": "influxdb",
+        "hostname": "192.168.4.148",
+        "port": "8086",
+        "protocol": "http",
+        "database": "DAA02T",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    }
+]
